@@ -1,5 +1,5 @@
 /* =========================================================
-   ASZOI V1 — ULTRA MINIMAL INSTITUTIONAL DESIGN
+   ASZOI V1 — ULTRA-MINIMAL INSTITUTIONAL DESIGN
    ========================================================= */
 
 :root {
@@ -43,11 +43,13 @@ html {
 body {
     background: var(--bg);
     color: var(--text);
+
     font-family:
         Inter,
         Helvetica,
         Arial,
         sans-serif;
+
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -91,17 +93,21 @@ button {
 .section-label,
 .eyebrow {
     color: var(--accent);
+
     font-size: 0.72rem;
     font-weight: 600;
+
     letter-spacing: 0.16em;
     text-transform: uppercase;
 }
 
 .section-number {
     display: block;
+
     margin-bottom: 0.8rem;
 
     color: var(--muted);
+
     font-size: 0.7rem;
     letter-spacing: 0.12em;
 }
@@ -117,14 +123,17 @@ button {
 
     font-weight: 500;
     line-height: 1.02;
+
     letter-spacing: -0.045em;
 }
 
 .section-introduction {
     max-width: 650px;
+
     margin-top: 1.5rem;
 
     color: var(--muted);
+
     font-size: 1.05rem;
 }
 
@@ -132,6 +141,7 @@ button {
     max-width: 680px;
 
     color: #cfcfcf;
+
     font-size: clamp(
         1.05rem,
         2vw,
@@ -148,6 +158,7 @@ button {
 
 .site-header {
     position: fixed;
+
     z-index: 1000;
 
     top: 0;
@@ -171,6 +182,11 @@ button {
     justify-content: space-between;
 }
 
+
+/* =========================================================
+   ASZOI LOGO
+   ========================================================= */
+
 .brand {
     display: inline-flex;
     align-items: center;
@@ -180,18 +196,38 @@ button {
 }
 
 .brand:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
-.brand-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+.brand-logo {
+    width: 46px;
+    height: 46px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
 }
+
+.brand:hover .brand-logo {
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .main-navigation {
     display: flex;
     align-items: center;
+
     gap: 2rem;
 }
 
@@ -244,6 +280,7 @@ button {
     height: 42px;
 
     border: 1px solid var(--line);
+
     background: transparent;
 
     cursor: pointer;
@@ -297,6 +334,7 @@ button {
     font-weight: 600;
 
     line-height: 0.8;
+
     letter-spacing: -0.075em;
 }
 
@@ -312,6 +350,7 @@ button {
     );
 
     font-weight: 500;
+
     letter-spacing: 0.14em;
 }
 
@@ -323,12 +362,14 @@ button {
     color: var(--muted);
 
     font-size: 1.05rem;
+
     line-height: 1.7;
 }
 
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
+
     gap: 0.75rem;
 
     margin-top: 2.5rem;
@@ -341,6 +382,7 @@ button {
 
 .button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -356,6 +398,7 @@ button {
     font-weight: 600;
 
     letter-spacing: 0.08em;
+
     text-transform: uppercase;
 
     transition:
@@ -371,6 +414,7 @@ button {
 
 .button-primary {
     background: var(--text);
+
     border-color: var(--text);
 
     color: #080808;
@@ -378,6 +422,7 @@ button {
 
 .button-primary:hover {
     background: var(--accent);
+
     border-color: var(--accent);
 }
 
@@ -387,6 +432,7 @@ button {
 
 .button-secondary:hover {
     border-color: #555;
+
     background: var(--surface);
 }
 
@@ -397,7 +443,9 @@ button {
 
 .text-link {
     display: inline-flex;
+
     align-items: center;
+
     gap: 0.65rem;
 
     margin-top: 2rem;
@@ -408,6 +456,7 @@ button {
     font-weight: 600;
 
     letter-spacing: 0.07em;
+
     text-transform: uppercase;
 
     transition:
@@ -475,11 +524,13 @@ button {
     color: var(--muted);
 
     font-size: 0.7rem;
+
     letter-spacing: 0.1em;
 }
 
 .method-step h3 {
     font-size: 1.05rem;
+
     letter-spacing: 0.08em;
 }
 
@@ -506,6 +557,7 @@ button {
 
 .work-grid {
     display: grid;
+
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
@@ -521,7 +573,9 @@ button {
     min-height: 270px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 
     padding: 1.5rem;
@@ -541,6 +595,7 @@ button {
     color: var(--muted);
 
     font-size: 0.7rem;
+
     letter-spacing: 0.1em;
 }
 
@@ -552,6 +607,7 @@ button {
     );
 
     font-weight: 500;
+
     letter-spacing: -0.03em;
 }
 
@@ -582,7 +638,9 @@ button {
 
 .work-item:hover .work-arrow {
     color: var(--accent);
-    transform: translate(3px, -3px);
+
+    transform:
+        translate(3px, -3px);
 }
 
 .section-action {
@@ -600,6 +658,7 @@ button {
 
 .participation-grid {
     display: grid;
+
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
@@ -613,6 +672,7 @@ button {
     min-height: 300px;
 
     display: flex;
+
     flex-direction: column;
 
     padding: 1.5rem;
@@ -632,6 +692,7 @@ button {
     color: var(--muted);
 
     font-size: 0.7rem;
+
     letter-spacing: 0.1em;
 }
 
@@ -639,6 +700,7 @@ button {
     margin-top: auto;
 
     font-size: 2rem;
+
     font-weight: 500;
 
     letter-spacing: -0.03em;
@@ -669,6 +731,7 @@ button {
 
 .connect-inner {
     display: grid;
+
     grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1fr);
@@ -684,6 +747,7 @@ button {
 
 .channel-link {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -694,6 +758,7 @@ button {
     color: #d5d5d5;
 
     font-size: 0.85rem;
+
     letter-spacing: 0.04em;
 
     transition:
@@ -703,6 +768,7 @@ button {
 
 .channel-link:hover {
     padding-left: 0.5rem;
+
     color: var(--accent);
 }
 
@@ -715,6 +781,7 @@ button {
     min-height: 80vh;
 
     display: flex;
+
     align-items: center;
 
     border-bottom: 1px solid var(--line);
@@ -732,6 +799,7 @@ button {
     font-weight: 500;
 
     line-height: 0.9;
+
     letter-spacing: -0.065em;
 }
 
@@ -773,7 +841,9 @@ button {
 
 .footer-column {
     display: flex;
+
     flex-direction: column;
+
     gap: 0.65rem;
 }
 
@@ -786,6 +856,7 @@ button {
     font-weight: 600;
 
     letter-spacing: 0.12em;
+
     text-transform: uppercase;
 }
 
@@ -804,9 +875,11 @@ button {
 
 .footer-bottom {
     display: flex;
+
     justify-content: space-between;
 
     margin-top: 5rem;
+
     padding-top: 1.5rem;
 
     border-top: 1px solid var(--line);
@@ -818,7 +891,7 @@ button {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -829,11 +902,13 @@ button {
 
     .connect-inner {
         grid-template-columns: 1fr;
+
         gap: 3rem;
     }
 
     .footer-main {
         grid-template-columns: 1fr;
+
         gap: 3rem;
     }
 
@@ -847,12 +922,11 @@ button {
     .method-step {
         min-height: 180px;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 650px) {
@@ -884,6 +958,7 @@ button {
         width: 100%;
 
         display: none;
+
         flex-direction: column;
         align-items: stretch;
 
@@ -907,6 +982,14 @@ button {
     }
 
 
+    /* Mobile logo */
+
+    .brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+
     /* Hero */
 
     .hero {
@@ -927,6 +1010,7 @@ button {
 
     .hero-philosophy {
         font-size: 0.8rem;
+
         letter-spacing: 0.1em;
     }
 
@@ -936,6 +1020,7 @@ button {
 
     .hero-actions {
         flex-direction: column;
+
         align-items: stretch;
     }
 
@@ -993,14 +1078,15 @@ button {
     /* Footer */
 
     .footer-navigation {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .footer-bottom {
         flex-direction: column;
+
         gap: 0.5rem;
     }
-
 }
 
 
@@ -1018,8 +1104,9 @@ button {
     *::before,
     *::after {
         transition-duration: 0.01ms !important;
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
     }
-
 }
