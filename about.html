@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About ASZOI — ASZOI</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f6f3;
+    color: #151515;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1150px, calc(100% - 48px));
+    margin: auto;
+}
+
+header {
+    border-bottom: 1px solid #d5d5d0;
+    position: sticky;
+    top: 0;
+    background: #f6f6f3;
+    z-index: 10;
+}
+
+.header-inner {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    font-size: 13px;
+    color: #555;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.hero {
+    padding: 90px 0 80px;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: .95;
+    letter-spacing: -4px;
+    margin-bottom: 35px;
+}
+
+.hero p {
+    max-width: 760px;
+    font-size: 20px;
+    color: #555;
+}
+
+.section {
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.content {
+    max-width: 800px;
+}
+
+.content h2 {
+    font-size: 30px;
+    margin-bottom: 22px;
+    letter-spacing: -1px;
+}
+
+.content p {
+    font-size: 17px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.numbered {
+    border-top: 1px solid #d5d5d0;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 25px;
+    padding: 28px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.item-number {
+    color: #888;
+    font-size: 12px;
+}
+
+.item h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.item p {
+    font-size: 15px;
+    color: #666;
+}
+
+.documents {
+    border-top: 1px solid #d5d5d0;
+}
+
+.document {
+    display: grid;
+    grid-template-columns: 170px 1fr 90px;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.document-type {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.document-title {
+    font-size: 17px;
+}
+
+.document-link {
+    font-size: 11px;
+    text-align: right;
+    color: #666;
+}
+
+.foundation-box {
+    border: 1px solid #d5d5d0;
+    padding: 35px;
+}
+
+.foundation-box h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.foundation-box p {
+    color: #555;
+    max-width: 750px;
+}
+
+footer {
+    padding: 40px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #777;
+}
+
+@media(max-width:750px) {
+
+    .container {
+        width: min(100% - 32px, 1150px);
+    }
+
+    nav {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -2px;
+    }
+
+    .document {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .document-link {
+        text-align: left;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<a href="index.html" class="logo">ASZOI</a>
+
+<nav>
+<a href="about.html">About</a>
+<a href="#">Projects</a>
+<a href="#">Publications</a>
+<a href="#">Newsroom</a>
+<a href="#">People</a>
+<a href="#">Contribute</a>
+<a href="#">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<div class="container">
+
+<div class="eyebrow">
+About the Institute
+</div>
+
+<h1>
+ASZOI
+</h1>
+
+<p>
+ASZOI is an independent research and media institute
+developing systems for observation, investigation,
+analysis, documentation and public communication.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+01 — Institute
+</div>
+
+<div class="content">
+
+<h2>
+Institutional Overview
+</h2>
+
+<p>
+ASZOI is an independent institute established to develop
+structured systems for observing developments, examining
+information, conducting projects and producing documented
+knowledge.
+</p>
+
+<p>
+The institute operates through an integrated framework of
+observation, organisation, analysis and communication.
+Its work is intended to produce records, findings and
+public resources that can be examined independently.
+</p>
+
+<p>
+ASZOI is currently in its foundation phase. During this
+period, priority is given to establishing institutional
+standards, operating systems, project frameworks,
+publication practices and a reliable public record.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+02 — Purpose
+</div>
+
+<div class="content">
+
+<h2>
+Mission & Purpose
+</h2>
+
+<p>
+ASZOI seeks to improve the way information, developments
+and complex subjects are observed, organised, investigated
+and communicated.
+</p>
+
+<p>
+Its purpose is to develop useful institutional knowledge
+through systematic observation, independent analysis,
+documented projects and accessible public communication.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+03 — Model
+</div>
+
+<div class="content">
+
+<h2>
+Institutional Model
+</h2>
+
+<div class="numbered">
+
+
+<div class="item">
+
+<div class="item-number">
+01
+</div>
+
+<div>
+
+<h3>
+ASZOP
+</h3>
+
+<p>
+Observation and information collection. ASZOP examines
+relevant developments, signals, patterns, information
+and data that may require institutional attention.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="item">
+
+<div class="item-number">
+02
+</div>
+
+<div>
+
+<h3>
+ASZON
+</h3>
+
+<p>
+Organisation and oversight. ASZON examines whether
+planning, execution and institutional activity remain
+aligned with the intended purpose of the work.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="item">
+
+<div class="item-number">
+03
+</div>
+
+<div>
+
+<h3>
+ASZOA
+</h3>
+
+<p>
+Analysis and evaluation. ASZOA examines outcomes,
+relevance, novelty and whether completed work produces
+meaningful and defensible value.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+04 — Work
+</div>
+
+<div class="content">
+
+<h2>
+How ASZOI Works
+</h2>
+
+<p>
+Institutional work is organised primarily through
+projects. Projects may be proposed, developed, conducted
+and concluded according to their individual scope and
+requirements.
+</p>
+
+<p>
+Projects may generate publications, datasets, reports,
+articles, documentation or other outputs. These outputs
+are maintained as part of the institute's public record
+where appropriate.
+</p>
+
+<p>
+The institute maintains separate records for projects,
+publications, newsroom material, institutional documents
+and people so that individual outputs can be understood
+within their wider institutional context.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+05 — Standards
+</div>
+
+<div class="content">
+
+<h2>
+Institutional Standards
+</h2>
+
+<p>
+ASZOI aims to maintain clear distinctions between
+observation, analysis, opinion, institutional statements
+and published findings.
+</p>
+
+<p>
+Where practical, institutional work should identify its
+scope, methodology, status, authorship and supporting
+documentation.
+</p>
+
+<p>
+The institute intends to maintain an accessible record
+of its projects, publications and institutional documents
+as its systems develop.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="label">
+06 — Documents
+</div>
+
+<div class="content">
+
+<h2>
+Institutional Documents
+</h2>
+
+<p>
+This section will contain official ASZOI guidelines,
+frameworks, policies, methodologies and other documents
+that define or explain institutional operations.
+</p>
+
+<div class="documents">
+
+
+<div class="document">
+
+<div class="document-type">
+Guideline
+</div>
+
+<div class="document-title">
+Project Development Guidelines
+</div>
+
+<div class="document-link">
+Coming soon
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-type">
+Framework
+</div>
+
+<div class="document-title">
+ASZOI Institutional Framework
+</div>
+
+<div class="document-link">
+Coming soon
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-type">
+Standard
+</div>
+
+<div class="document-title">
+Publication Standards
+</div>
+
+<div class="document-link">
+Coming soon
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<div class="foundation-box">
+
+<div class="eyebrow">
+Foundation Phase
+</div>
+
+<h2>
+Building the institution and its systems.
+</h2>
+
+<p>
+ASZOI is presently focused on establishing its
+institutional infrastructure, operating guidelines,
+research and project systems, publication standards and
+public record. The institute's scope and activities may
+develop as these systems mature.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-inner">
+
+<div>
+© 2026 ASZOI
+</div>
+
+<div>
+Independent Research & Media Institute
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
