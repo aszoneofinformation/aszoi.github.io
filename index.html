@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASZOI — Independent Research & Media Institute</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid #d8d8d5;
+      padding: 22px 6%;
+      background: #f7f7f5;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #111;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 6% 80px;
+    }
+
+    .label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      max-width: 900px;
+      margin-bottom: 35px;
+    }
+
+    .intro {
+      max-width: 650px;
+      font-size: 20px;
+      color: #444;
+      margin-bottom: 45px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 13px 22px;
+      margin-right: 10px;
+      border: 1px solid #111;
+      color: #111;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .buttons a:first-child {
+      background: #111;
+      color: #fff;
+    }
+
+    section {
+      border-top: 1px solid #d8d8d5;
+      padding: 65px 0;
+      margin-top: 80px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 30px;
+      padding: 25px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .feature:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .date {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .feature h2 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #555;
+      max-width: 700px;
+    }
+
+    footer {
+      border-top: 1px solid #d8d8d5;
+      padding: 35px 6%;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        display: none;
+      }
+
+      main {
+        padding-top: 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">ASZOI</div>
+
+    <nav>
+      <a href="#">Research</a>
+      <a href="#">Publications</a>
+      <a href="#">Newsroom</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="label">Independent Research & Media Institute</div>
+
+  <h1>Observation.<br>Analysis.<br>Understanding.</h1>
+
+  <p class="intro">
+    ASZOI develops research, analytical and media systems
+    for understanding emerging developments, information
+    environments and complex realities.
+  </p>
+
+  <div class="buttons">
+    <a href="#">Explore Research</a>
+    <a href="#">About ASZOI</a>
+  </div>
+
+  <section>
+    <div class="section-title">Latest</div>
+
+    <div class="feature">
+      <div class="date">RESEARCH · 001</div>
+      <div>
+        <h2>Research will appear here.</h2>
+        <p>
+          This section will present ASZOI's research,
+          findings and analytical work as the institute develops.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="date">BRIEFING · 001</div>
+      <div>
+        <h2>ASZOI Briefings</h2>
+        <p>
+          Short-form observations and analysis will be
+          published here.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="section-title">About ASZOI</div>
+
+    <p class="intro">
+      ASZOI is an independent institute currently in its
+      foundation phase, developing systems for observation,
+      research, analysis and public communication.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-title">Newsroom</div>
+
+    <div class="feature">
+      <div class="date">29 AUG 2026</div>
+      <div>
+        <h2>ASZOI enters its foundation phase.</h2>
+        <p>
+          The institute is beginning the development of its
+          research, analytical and media infrastructure.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2026 ASZOI</div>
+    <div>Independent Research & Media Institute</div>
+  </div>
+</footer>
+
+</body>
+</html>
