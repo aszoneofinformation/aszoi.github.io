@@ -1,272 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASZOI — Independent Research & Media Institute</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<title>ASZOI — Independent Research & Media Institute</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f2;
+    color: #151515;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 28px;
+}
+
+/* HEADER */
+
+header {
+    border-bottom: 1px solid #d8d8d4;
+    background: #f5f5f2;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    font-size: 13px;
+    color: #444;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+/* HERO */
+
+.hero {
+    padding: 110px 0 100px;
+    border-bottom: 1px solid #d8d8d4;
+}
+
+.kicker {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+    max-width: 900px;
+    margin-bottom: 35px;
+}
+
+.hero-description {
+    max-width: 700px;
+    font-size: 19px;
+    color: #555;
+}
+
+/* INTRO */
+
+.intro {
+    padding: 80px 0;
+    border-bottom: 1px solid #d8d8d4;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+}
+
+.section-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.intro-text {
+    font-size: 23px;
+    line-height: 1.45;
+}
+
+/* SYSTEM */
+
+.system {
+    padding: 80px 0;
+    border-bottom: 1px solid #d8d8d4;
+}
+
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #d8d8d4;
+    border: 1px solid #d8d8d4;
+}
+
+.system-card {
+    background: #f5f5f2;
+    padding: 35px;
+    min-height: 220px;
+}
+
+.system-number {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 45px;
+}
+
+.system-card h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.system-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid #d8d8d4;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+}
+
+.view-all {
+    font-size: 13px;
+    color: #666;
+}
+
+/* LIST */
+
+.list {
+    border-top: 1px solid #d8d8d4;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: 170px 1fr 100px;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid #d8d8d4;
+}
+
+.list-meta {
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.list-title {
+    font-size: 19px;
+}
+
+.list-status {
+    font-size: 12px;
+    text-align: right;
+    color: #666;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 45px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    nav {
+        display: none;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f5;
-      color: #111111;
-      line-height: 1.6;
+    .hero {
+        padding: 75px 0;
     }
 
-    header {
-      border-bottom: 1px solid #d8d8d5;
-      padding: 22px 6%;
-      background: #f7f7f5;
+    .hero h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
     }
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 2px;
+    .system-grid {
+        grid-template-columns: 1fr;
     }
 
-    nav a {
-      color: #111;
-      text-decoration: none;
-      margin-left: 28px;
-      font-size: 14px;
+    .list-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: auto;
-      padding: 100px 6% 80px;
-    }
-
-    .label {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 8vw, 92px);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      max-width: 900px;
-      margin-bottom: 35px;
-    }
-
-    .intro {
-      max-width: 650px;
-      font-size: 20px;
-      color: #444;
-      margin-bottom: 45px;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 13px 22px;
-      margin-right: 10px;
-      border: 1px solid #111;
-      color: #111;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .buttons a:first-child {
-      background: #111;
-      color: #fff;
-    }
-
-    section {
-      border-top: 1px solid #d8d8d5;
-      padding: 65px 0;
-      margin-top: 80px;
-    }
-
-    .section-title {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 35px;
-    }
-
-    .feature {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 30px;
-      padding: 25px 0;
-      border-top: 1px solid #ddd;
-    }
-
-    .feature:last-child {
-      border-bottom: 1px solid #ddd;
-    }
-
-    .date {
-      color: #777;
-      font-size: 13px;
-    }
-
-    .feature h2 {
-      font-size: 27px;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      color: #555;
-      max-width: 700px;
-    }
-
-    footer {
-      border-top: 1px solid #d8d8d5;
-      padding: 35px 6%;
-      color: #666;
-      font-size: 13px;
+    .list-status {
+        text-align: left;
     }
 
     .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        display: none;
-      }
-
-      main {
-        padding-top: 65px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .feature {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .footer-inner {
         flex-direction: column;
         gap: 10px;
-      }
     }
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">ASZOI</div>
 
-    <nav>
-      <a href="#">Research</a>
-      <a href="#">Publications</a>
-      <a href="#">Newsroom</a>
-      <a href="#">About</a>
-    </nav>
-  </div>
+<div class="header-inner">
+
+<div class="logo">ASZOI</div>
+
+<nav>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Publications</a>
+<a href="#">Newsroom</a>
+<a href="#">People</a>
+<a href="#">Contribute</a>
+<a href="#">Contact</a>
+</nav>
+
+</div>
+
 </header>
+
 
 <main>
 
-  <div class="label">Independent Research & Media Institute</div>
 
-  <h1>Observation.<br>Analysis.<br>Understanding.</h1>
+<!-- HERO -->
 
-  <p class="intro">
-    ASZOI develops research, analytical and media systems
-    for understanding emerging developments, information
-    environments and complex realities.
-  </p>
+<section class="hero">
 
-  <div class="buttons">
-    <a href="#">Explore Research</a>
-    <a href="#">About ASZOI</a>
-  </div>
+<div class="container">
 
-  <section>
-    <div class="section-title">Latest</div>
+<div class="kicker">
+Independent Research & Media Institute
+</div>
 
-    <div class="feature">
-      <div class="date">RESEARCH · 001</div>
-      <div>
-        <h2>Research will appear here.</h2>
-        <p>
-          This section will present ASZOI's research,
-          findings and analytical work as the institute develops.
-        </p>
-      </div>
-    </div>
+<h1>
+Observation.<br>
+Analysis.<br>
+Understanding.
+</h1>
 
-    <div class="feature">
-      <div class="date">BRIEFING · 001</div>
-      <div>
-        <h2>ASZOI Briefings</h2>
-        <p>
-          Short-form observations and analysis will be
-          published here.
-        </p>
-      </div>
-    </div>
+<p class="hero-description">
+ASZOI develops systems for observing, investigating,
+analysing and communicating developments, information
+environments and complex realities.
+</p>
 
-  </section>
+</div>
 
-  <section>
-    <div class="section-title">About ASZOI</div>
+</section>
 
-    <p class="intro">
-      ASZOI is an independent institute currently in its
-      foundation phase, developing systems for observation,
-      research, analysis and public communication.
-    </p>
-  </section>
 
-  <section>
-    <div class="section-title">Newsroom</div>
+<!-- ABOUT -->
 
-    <div class="feature">
-      <div class="date">29 AUG 2026</div>
-      <div>
-        <h2>ASZOI enters its foundation phase.</h2>
-        <p>
-          The institute is beginning the development of its
-          research, analytical and media infrastructure.
-        </p>
-      </div>
-    </div>
+<section class="intro">
 
-  </section>
+<div class="container">
+
+<div class="intro-grid">
+
+<div class="section-label">
+About ASZOI
+</div>
+
+<div class="intro-text">
+
+ASZOI is an independent institute in its foundation phase,
+building an integrated system for observation, project
+development, research, analysis and public communication.
+
+The institute aims to produce structured knowledge,
+documented findings and useful public resources.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SYSTEM -->
+
+<section class="system">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>How ASZOI Works</h2>
+
+</div>
+
+
+<div class="system-grid">
+
+
+<div class="system-card">
+
+<div class="system-number">01</div>
+
+<h3>ASZOP</h3>
+
+<p>
+Observation and information collection.
+ASZOP focuses on identifying relevant
+developments, signals, patterns and data.
+</p>
+
+</div>
+
+
+<div class="system-card">
+
+<div class="system-number">02</div>
+
+<h3>ASZON</h3>
+
+<p>
+Organisation and system development.
+ASZON examines whether observations and
+planned actions remain aligned with their purpose.
+</p>
+
+</div>
+
+
+<div class="system-card">
+
+<div class="system-number">03</div>
+
+<h3>ASZOA</h3>
+
+<p>
+Analysis and outcome evaluation.
+ASZOA examines results, novelty, relevance
+and whether the work produces meaningful value.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Projects</h2>
+
+<a class="view-all" href="#">View all →</a>
+
+</div>
+
+
+<div class="list">
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Future Project
+</div>
+
+<div class="list-title">
+Projects under development
+</div>
+
+<div class="list-status">
+Future
+</div>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Live Project
+</div>
+
+<div class="list-title">
+Current ASZOI initiatives
+</div>
+
+<div class="list-status">
+Live
+</div>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Completed
+</div>
+
+<div class="list-title">
+Completed institutional work
+</div>
+
+<div class="list-status">
+Archive
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Publications</h2>
+
+<a class="view-all" href="#">Browse publications →</a>
+
+</div>
+
+
+<div class="list">
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Reports
+</div>
+
+<div class="list-title">
+ASZOI Reports
+</div>
+
+<div class="list-status">
+Archive
+</div>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Papers
+</div>
+
+<div class="list-title">
+Research papers and working papers
+</div>
+
+<div class="list-status">
+Archive
+</div>
+
+</div>
+
+
+<div class="list-item">
+
+<div class="list-meta">
+Briefings
+</div>
+
+<div class="list-title">
+Short-form analytical publications
+</div>
+
+<div class="list-status">
+Archive
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWSROOM -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>Newsroom</h2>
+
+<a class="view-all" href="#">Open newsroom →</a>
+
+</div>
+
+
+<div class="list">
+
+
+<div class="list-item">
+
+<div class="list-meta">
+29 Aug 2026
+</div>
+
+<div class="list-title">
+ASZOI begins its foundation phase.
+</div>
+
+<div class="list-status">
+Institutional
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
 
 </main>
 
+
 <footer>
-  <div class="footer-inner">
-    <div>© 2026 ASZOI</div>
-    <div>Independent Research & Media Institute</div>
-  </div>
+
+<div class="container">
+
+<div class="footer-inner">
+
+<div>
+© 2026 ASZOI
+</div>
+
+<div>
+Independent Research & Media Institute
+</div>
+
+</div>
+
+</div>
+
 </footer>
+
 
 </body>
 </html>
