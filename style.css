@@ -1,0 +1,1025 @@
+/* =========================================================
+   ASZOI V1 — ULTRA MINIMAL INSTITUTIONAL DESIGN
+   ========================================================= */
+
+:root {
+    --bg: #080808;
+    --surface: #101010;
+    --surface-light: #171717;
+
+    --text: #f4f4f4;
+    --muted: #999999;
+    --line: #292929;
+
+    --accent: #d88932;
+
+    --max-width: 1200px;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 7rem;
+    --space-xxl: 10rem;
+
+    --transition: 250ms ease;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family:
+        Inter,
+        Helvetica,
+        Arial,
+        sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.container {
+    width: min(
+        calc(100% - 3rem),
+        var(--max-width)
+    );
+
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--space-xxl) 0;
+}
+
+.section-heading {
+    max-width: 850px;
+}
+
+.section-label,
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section-number {
+    display: block;
+    margin-bottom: 0.8rem;
+
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+}
+
+.section-heading h2 {
+    margin-top: 0.75rem;
+
+    font-size: clamp(
+        2.2rem,
+        5vw,
+        4.8rem
+    );
+
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.section-introduction {
+    max-width: 650px;
+    margin-top: 1.5rem;
+
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.lead {
+    max-width: 680px;
+
+    color: #cfcfcf;
+    font-size: clamp(
+        1.05rem,
+        2vw,
+        1.35rem
+    );
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+    position: fixed;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    border-bottom: 1px solid transparent;
+
+    background: rgba(8, 8, 8, 0.88);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+
+    transition:
+        opacity var(--transition);
+}
+
+.brand:hover {
+    opacity: 0.7;
+}
+
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-navigation a {
+    position: relative;
+
+    color: #bcbcbc;
+
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+
+    transition:
+        color var(--transition);
+}
+
+.main-navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--accent);
+
+    transition:
+        width var(--transition);
+}
+
+.main-navigation a:hover {
+    color: var(--text);
+}
+
+.main-navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--line);
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 18px;
+    height: 1px;
+
+    margin: 5px auto;
+
+    background: var(--text);
+
+    transition:
+        transform var(--transition);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        9rem 0
+        6rem;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-content {
+    max-width: 1050px;
+}
+
+.hero h1 {
+    margin-top: 0.5rem;
+
+    font-size: clamp(
+        5rem,
+        18vw,
+        13rem
+    );
+
+    font-weight: 600;
+
+    line-height: 0.8;
+    letter-spacing: -0.075em;
+}
+
+.hero-philosophy {
+    margin-top: 2.5rem;
+
+    color: #d7d7d7;
+
+    font-size: clamp(
+        1rem,
+        2vw,
+        1.35rem
+    );
+
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    margin-top: 1.5rem;
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    margin-top: 2.5rem;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+        0.8rem
+        1.2rem;
+
+    border: 1px solid var(--line);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--text);
+    border-color: var(--text);
+
+    color: #080808;
+}
+
+.button-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.button-secondary {
+    color: var(--text);
+}
+
+.button-secondary:hover {
+    border-color: #555;
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   TEXT LINKS
+   ========================================================= */
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    margin-top: 2rem;
+
+    color: var(--text);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    transition:
+        color var(--transition);
+}
+
+.text-link span {
+    transition:
+        transform var(--transition);
+}
+
+.text-link:hover {
+    color: var(--accent);
+}
+
+.text-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   INSTITUTE / PURPOSE
+   ========================================================= */
+
+.institute-section,
+.purpose-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.section-content {
+    margin-top: 3.5rem;
+}
+
+
+/* =========================================================
+   METHOD
+   ========================================================= */
+
+.method-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.method-flow {
+    display: flex;
+    align-items: stretch;
+
+    margin-top: 5rem;
+}
+
+.method-step {
+    flex: 1;
+
+    min-height: 190px;
+
+    padding: 1.5rem;
+
+    border: 1px solid var(--line);
+}
+
+.method-number {
+    display: block;
+
+    margin-bottom: 2.5rem;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.method-step h3 {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+}
+
+.method-step p {
+    margin-top: 0.7rem;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+}
+
+.method-line {
+    display: none;
+}
+
+
+/* =========================================================
+   WORK
+   ========================================================= */
+
+.work-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    margin-top: 5rem;
+
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.work-item {
+    position: relative;
+
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1.5rem;
+
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        background var(--transition);
+}
+
+.work-item:hover {
+    background: var(--surface);
+}
+
+.work-index {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.work-item-content h3 {
+    font-size: clamp(
+        1.7rem,
+        3vw,
+        2.5rem
+    );
+
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.work-item-content p {
+    max-width: 360px;
+
+    margin-top: 0.7rem;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+}
+
+.work-arrow {
+    position: absolute;
+
+    top: 1.5rem;
+    right: 1.5rem;
+
+    color: var(--muted);
+
+    font-size: 1.2rem;
+
+    transition:
+        transform var(--transition),
+        color var(--transition);
+}
+
+.work-item:hover .work-arrow {
+    color: var(--accent);
+    transform: translate(3px, -3px);
+}
+
+.section-action {
+    margin-top: 3rem;
+}
+
+
+/* =========================================================
+   PARTICIPATION
+   ========================================================= */
+
+.participate-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.participation-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    margin-top: 5rem;
+
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.participation-item {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5rem;
+
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        background var(--transition);
+}
+
+.participation-item:hover {
+    background: var(--surface);
+}
+
+.participation-number {
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.participation-item h3 {
+    margin-top: auto;
+
+    font-size: 2rem;
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+}
+
+.participation-item p {
+    max-width: 320px;
+
+    margin-top: 0.8rem;
+
+    color: var(--muted);
+
+    font-size: 0.9rem;
+}
+
+.participation-item .text-link {
+    margin-top: 1.5rem;
+}
+
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+
+.connect-section {
+    border-bottom: 1px solid var(--line);
+}
+
+.connect-inner {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 5rem;
+}
+
+.channel-links {
+    margin-top: 2rem;
+
+    border-top: 1px solid var(--line);
+}
+
+.channel-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.2rem 0;
+
+    border-bottom: 1px solid var(--line);
+
+    color: #d5d5d5;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+
+    transition:
+        color var(--transition),
+        padding var(--transition);
+}
+
+.channel-link:hover {
+    padding-left: 0.5rem;
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closing-section {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.closing-content h2 {
+    margin-top: 1rem;
+
+    font-size: clamp(
+        3.5rem,
+        10vw,
+        8rem
+    );
+
+    font-weight: 500;
+
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 5rem 0 2rem;
+}
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        2fr;
+
+    gap: 5rem;
+}
+
+.footer-brand p {
+    margin-top: 0.7rem;
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+.footer-navigation {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-heading {
+    margin-bottom: 0.5rem;
+
+    color: var(--accent);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.footer-column a {
+    color: var(--muted);
+
+    font-size: 0.8rem;
+
+    transition:
+        color var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--text);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+
+    border-top: 1px solid var(--line);
+
+    color: #666;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .section {
+        padding: 6rem 0;
+    }
+
+    .connect-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .method-flow {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .method-step {
+        min-height: 180px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: min(
+            calc(100% - 2rem),
+            var(--max-width)
+        );
+    }
+
+    .section {
+        padding: 5rem 0;
+    }
+
+
+    /* Mobile navigation */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-navigation {
+        position: absolute;
+
+        top: 76px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 1rem;
+
+        border-bottom: 1px solid var(--line);
+
+        background: rgba(8, 8, 8, 0.97);
+    }
+
+    .main-navigation.is-open {
+        display: flex;
+    }
+
+    .main-navigation a {
+        padding: 1rem 0;
+
+        border-bottom: 1px solid var(--line);
+
+        font-size: 0.9rem;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 90vh;
+
+        padding:
+            8rem 0
+            4rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            4.5rem,
+            24vw,
+            8rem
+        );
+    }
+
+    .hero-philosophy {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+
+    /* Method */
+
+    .method-flow {
+        grid-template-columns: 1fr;
+
+        margin-top: 3rem;
+    }
+
+    .method-step {
+        min-height: 160px;
+    }
+
+
+    /* Work */
+
+    .work-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 3rem;
+    }
+
+    .work-item {
+        min-height: 230px;
+    }
+
+
+    /* Participation */
+
+    .participation-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 3rem;
+    }
+
+    .participation-item {
+        min-height: 240px;
+    }
+
+
+    /* Connect */
+
+    .connect-inner {
+        gap: 2.5rem;
+    }
+
+
+    /* Footer */
+
+    .footer-navigation {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
