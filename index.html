@@ -16,9 +16,9 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f2;
+    background: #f6f6f3;
     color: #151515;
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 a {
@@ -27,33 +27,29 @@ a {
 }
 
 .container {
-    max-width: 1200px;
+    width: min(1200px, calc(100% - 48px));
     margin: auto;
-    padding: 0 28px;
 }
 
 /* HEADER */
 
 header {
-    border-bottom: 1px solid #d8d8d4;
-    background: #f5f5f2;
+    border-bottom: 1px solid #d5d5d0;
     position: sticky;
     top: 0;
-    z-index: 10;
+    background: #f6f6f3;
+    z-index: 20;
 }
 
 .header-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 18px 28px;
-
+    height: 68px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 700;
     letter-spacing: 3px;
 }
@@ -65,7 +61,7 @@ nav {
 
 nav a {
     font-size: 13px;
-    color: #444;
+    color: #555;
 }
 
 nav a:hover {
@@ -75,170 +71,240 @@ nav a:hover {
 /* HERO */
 
 .hero {
-    padding: 110px 0 100px;
-    border-bottom: 1px solid #d8d8d4;
+    padding: 110px 0 95px;
+    border-bottom: 1px solid #d5d5d0;
 }
 
-.kicker {
-    font-size: 12px;
-    letter-spacing: 2px;
+.eyebrow {
+    font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: 2px;
     color: #777;
     margin-bottom: 25px;
 }
 
 .hero h1 {
     font-size: clamp(48px, 8vw, 88px);
-    line-height: 0.95;
+    line-height: .94;
     letter-spacing: -4px;
-    max-width: 900px;
-    margin-bottom: 35px;
+    max-width: 950px;
+    margin-bottom: 38px;
 }
 
-.hero-description {
-    max-width: 700px;
-    font-size: 19px;
+.hero-text {
+    max-width: 720px;
+    font-size: 20px;
     color: #555;
 }
 
 /* INTRO */
 
 .intro {
-    padding: 80px 0;
-    border-bottom: 1px solid #d8d8d4;
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
 }
 
-.intro-grid {
+.two-column {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 60px;
+    grid-template-columns: 230px 1fr;
+    gap: 70px;
 }
 
-.section-label {
-    font-size: 12px;
+.label {
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #777;
 }
 
-.intro-text {
-    font-size: 23px;
+.large-text {
+    font-size: 25px;
     line-height: 1.45;
+    max-width: 800px;
 }
 
 /* SYSTEM */
 
 .system {
-    padding: 80px 0;
-    border-bottom: 1px solid #d8d8d4;
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
 }
 
-.system-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: #d8d8d4;
-    border: 1px solid #d8d8d4;
-}
-
-.system-card {
-    background: #f5f5f2;
-    padding: 35px;
-    min-height: 220px;
-}
-
-.system-number {
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 45px;
-}
-
-.system-card h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-.system-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-/* SECTIONS */
-
-.section {
-    padding: 80px 0;
-    border-bottom: 1px solid #d8d8d4;
-}
-
-.section-heading {
+.heading {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 35px;
 }
 
-.section-heading h2 {
-    font-size: 32px;
+.heading h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
 }
 
-.view-all {
-    font-size: 13px;
-    color: #666;
-}
-
-/* LIST */
-
-.list {
-    border-top: 1px solid #d8d8d4;
-}
-
-.list-item {
-    display: grid;
-    grid-template-columns: 170px 1fr 100px;
-    gap: 25px;
-    padding: 25px 0;
-    border-bottom: 1px solid #d8d8d4;
-}
-
-.list-meta {
+.heading span {
     font-size: 12px;
     color: #777;
-    text-transform: uppercase;
 }
 
-.list-title {
-    font-size: 19px;
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #d5d5d0;
+    border-left: 1px solid #d5d5d0;
 }
 
-.list-status {
-    font-size: 12px;
-    text-align: right;
+.system-card {
+    padding: 32px;
+    min-height: 235px;
+    border-right: 1px solid #d5d5d0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.number {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 45px;
+}
+
+.system-card h3 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.system-card p {
+    font-size: 14px;
     color: #666;
+}
+
+/* PORTAL */
+
+.portal {
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid #d5d5d0;
+}
+
+.portal-item {
+    padding: 32px 10px 32px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.portal-item:nth-child(odd) {
+    margin-right: 35px;
+}
+
+.portal-item:nth-child(even) {
+    padding-left: 35px;
+    border-left: 1px solid #d5d5d0;
+}
+
+.portal-item h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.portal-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.portal-link {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* LATEST */
+
+.latest {
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.record {
+    display: grid;
+    grid-template-columns: 180px 1fr 100px;
+    gap: 25px;
+    padding: 25px 0;
+    border-top: 1px solid #d5d5d0;
+}
+
+.record:last-child {
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.record-meta {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.record-title {
+    font-size: 18px;
+}
+
+.record-status {
+    text-align: right;
+    font-size: 11px;
+    color: #777;
+}
+
+/* FOUNDATION */
+
+.foundation {
+    padding: 75px 0;
+    border-bottom: 1px solid #d5d5d0;
+}
+
+.foundation-box {
+    border: 1px solid #d5d5d0;
+    padding: 40px;
+}
+
+.foundation-box h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.foundation-box p {
+    max-width: 750px;
+    color: #555;
 }
 
 /* FOOTER */
 
 footer {
-    padding: 45px 0;
+    padding: 40px 0;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
-    font-size: 12px;
     color: #777;
+    font-size: 11px;
 }
 
 /* MOBILE */
 
 @media (max-width: 750px) {
 
+    .container {
+        width: min(100% - 32px, 1200px);
+    }
+
     nav {
         display: none;
     }
 
     .hero {
-        padding: 75px 0;
+        padding: 70px 0;
     }
 
     .hero h1 {
@@ -246,21 +312,38 @@ footer {
         letter-spacing: -2px;
     }
 
-    .intro-grid {
+    .two-column {
         grid-template-columns: 1fr;
         gap: 25px;
+    }
+
+    .large-text {
+        font-size: 21px;
     }
 
     .system-grid {
         grid-template-columns: 1fr;
     }
 
-    .list-item {
+    .portal-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
     }
 
-    .list-status {
+    .portal-item:nth-child(odd) {
+        margin-right: 0;
+    }
+
+    .portal-item:nth-child(even) {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .record {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .record-status {
         text-align: left;
     }
 
@@ -273,13 +356,17 @@ footer {
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="header-inner">
+<div class="container header-inner">
 
-<div class="logo">ASZOI</div>
+<div class="logo">
+ASZOI
+</div>
 
 <nav>
 <a href="#">About</a>
@@ -305,7 +392,7 @@ footer {
 
 <div class="container">
 
-<div class="kicker">
+<div class="eyebrow">
 Independent Research & Media Institute
 </div>
 
@@ -315,10 +402,10 @@ Analysis.<br>
 Understanding.
 </h1>
 
-<p class="hero-description">
-ASZOI develops systems for observing, investigating,
-analysing and communicating developments, information
-environments and complex realities.
+<p class="hero-text">
+ASZOI develops institutional systems for observing,
+investigating, analysing and communicating developments,
+information environments and complex realities.
 </p>
 
 </div>
@@ -332,20 +419,22 @@ environments and complex realities.
 
 <div class="container">
 
-<div class="intro-grid">
+<div class="two-column">
 
-<div class="section-label">
+<div class="label">
 About ASZOI
 </div>
 
-<div class="intro-text">
+<div class="large-text">
 
-ASZOI is an independent institute in its foundation phase,
-building an integrated system for observation, project
-development, research, analysis and public communication.
+ASZOI is an independent institute currently in its
+foundation phase. It is building an integrated system
+for projects, publications, information, analysis and
+public communication.
 
-The institute aims to produce structured knowledge,
-documented findings and useful public resources.
+The institute's work is organised into documented
+projects and outputs that can be examined through
+the ASZOI public record.
 
 </div>
 
@@ -356,15 +445,17 @@ documented findings and useful public resources.
 </section>
 
 
-<!-- SYSTEM -->
+<!-- HOW IT WORKS -->
 
 <section class="system">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
 <h2>How ASZOI Works</h2>
+
+<span>Institutional System</span>
 
 </div>
 
@@ -374,14 +465,14 @@ documented findings and useful public resources.
 
 <div class="system-card">
 
-<div class="system-number">01</div>
+<div class="number">01</div>
 
 <h3>ASZOP</h3>
 
 <p>
 Observation and information collection.
-ASZOP focuses on identifying relevant
-developments, signals, patterns and data.
+Identifying relevant developments, signals,
+patterns and data.
 </p>
 
 </div>
@@ -389,14 +480,14 @@ developments, signals, patterns and data.
 
 <div class="system-card">
 
-<div class="system-number">02</div>
+<div class="number">02</div>
 
 <h3>ASZON</h3>
 
 <p>
-Organisation and system development.
-ASZON examines whether observations and
-planned actions remain aligned with their purpose.
+Organisation and system oversight.
+Examining planning, execution and alignment
+throughout institutional work.
 </p>
 
 </div>
@@ -404,14 +495,14 @@ planned actions remain aligned with their purpose.
 
 <div class="system-card">
 
-<div class="system-number">03</div>
+<div class="number">03</div>
 
 <h3>ASZOA</h3>
 
 <p>
-Analysis and outcome evaluation.
-ASZOA examines results, novelty, relevance
-and whether the work produces meaningful value.
+Analysis and evaluation.
+Examining results, relevance, novelty and
+whether work produces meaningful value.
 </p>
 
 </div>
@@ -424,71 +515,117 @@ and whether the work produces meaningful value.
 </section>
 
 
-<!-- PROJECTS -->
+<!-- INSTITUTIONAL PORTAL -->
 
-<section class="section">
+<section class="portal">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
-<h2>Projects</h2>
+<h2>Explore ASZOI</h2>
 
-<a class="view-all" href="#">View all →</a>
-
-</div>
-
-
-<div class="list">
-
-
-<div class="list-item">
-
-<div class="list-meta">
-Future Project
-</div>
-
-<div class="list-title">
-Projects under development
-</div>
-
-<div class="list-status">
-Future
-</div>
+<span>Institutional Record</span>
 
 </div>
 
 
-<div class="list-item">
+<div class="portal-grid">
 
-<div class="list-meta">
-Live Project
+
+<div class="portal-item">
+
+<h3>Projects</h3>
+
+<p>
+Explore future, live and completed ASZOI projects,
+including their objectives, methodology, people,
+files and outputs.
+</p>
+
+<a class="portal-link" href="#">
+Explore Projects →
+</a>
+
 </div>
 
-<div class="list-title">
-Current ASZOI initiatives
+
+<div class="portal-item">
+
+<h3>Publications</h3>
+
+<p>
+Browse books, reports, papers, research notes,
+briefings and other published institutional work.
+</p>
+
+<a class="portal-link" href="#">
+Browse Publications →
+</a>
+
 </div>
 
-<div class="list-status">
-Live
-</div>
+
+<div class="portal-item">
+
+<h3>Newsroom</h3>
+
+<p>
+Read ASZOI articles, analysis, announcements,
+project updates, interviews and statements.
+</p>
+
+<a class="portal-link" href="#">
+Open Newsroom →
+</a>
 
 </div>
 
 
-<div class="list-item">
+<div class="portal-item">
 
-<div class="list-meta">
-Completed
+<h3>Institutional Documents</h3>
+
+<p>
+Access institutional guidelines, methodologies,
+policies and documents describing how ASZOI operates.
+</p>
+
+<a class="portal-link" href="#">
+View Documents →
+</a>
+
 </div>
 
-<div class="list-title">
-Completed institutional work
+
+<div class="portal-item">
+
+<h3>People</h3>
+
+<p>
+Meet the people contributing to ASZOI's projects,
+publications and institutional work.
+</p>
+
+<a class="portal-link" href="#">
+View People →
+</a>
+
 </div>
 
-<div class="list-status">
-Archive
-</div>
+
+<div class="portal-item">
+
+<h3>Contribute</h3>
+
+<p>
+Explore ways to contribute research, information,
+ideas, expertise or other useful material.
+</p>
+
+<a class="portal-link" href="#">
+Contribute →
+</a>
 
 </div>
 
@@ -500,116 +637,82 @@ Archive
 </section>
 
 
-<!-- PUBLICATIONS -->
+<!-- LATEST -->
 
-<section class="section">
-
-<div class="container">
-
-<div class="section-heading">
-
-<h2>Publications</h2>
-
-<a class="view-all" href="#">Browse publications →</a>
-
-</div>
-
-
-<div class="list">
-
-
-<div class="list-item">
-
-<div class="list-meta">
-Reports
-</div>
-
-<div class="list-title">
-ASZOI Reports
-</div>
-
-<div class="list-status">
-Archive
-</div>
-
-</div>
-
-
-<div class="list-item">
-
-<div class="list-meta">
-Papers
-</div>
-
-<div class="list-title">
-Research papers and working papers
-</div>
-
-<div class="list-status">
-Archive
-</div>
-
-</div>
-
-
-<div class="list-item">
-
-<div class="list-meta">
-Briefings
-</div>
-
-<div class="list-title">
-Short-form analytical publications
-</div>
-
-<div class="list-status">
-Archive
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- NEWSROOM -->
-
-<section class="section">
+<section class="latest">
 
 <div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
-<h2>Newsroom</h2>
+<h2>Latest Record</h2>
 
-<a class="view-all" href="#">Open newsroom →</a>
+<span>ASZOI Public Record</span>
 
 </div>
 
 
-<div class="list">
+<div class="record">
 
-
-<div class="list-item">
-
-<div class="list-meta">
+<div class="record-meta">
 29 Aug 2026
 </div>
 
-<div class="list-title">
+<div class="record-title">
 ASZOI begins its foundation phase.
 </div>
 
-<div class="list-status">
+<div class="record-status">
 Institutional
 </div>
 
 </div>
 
+
+<div class="record">
+
+<div class="record-meta">
+Research System
+</div>
+
+<div class="record-title">
+ASZOP · ASZON · ASZOA
+</div>
+
+<div class="record-status">
+Framework
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOUNDATION -->
+
+<section class="foundation">
+
+<div class="container">
+
+<div class="foundation-box">
+
+<div class="eyebrow">
+Foundation Phase
+</div>
+
+<h2>
+Building the institution before scaling it.
+</h2>
+
+<p>
+ASZOI is currently developing its institutional
+infrastructure, operating guidelines, project systems,
+publication standards and public record. The institute
+will expand its work as these systems mature.
+</p>
 
 </div>
 
