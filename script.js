@@ -1,238 +1,393 @@
 /* =========================================================
-   ASZOI — HOMEPAGE INTERACTIONS
-   Deliberate, restrained institutional interface.
+   ASZOI
+   COMMUNICATION & MEDIA INTERFACE
+
+   Homepage JavaScript
+   Purpose:
+   - Mobile navigation behaviour
+   - Active navigation state
+   - Smooth section navigation
+   - Header behaviour
+   - Accessibility
+   - Lightweight reveal effects
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("main section[id]");
-    const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+  /* =======================================================
+     01 — ELEMENTS
+     ======================================================= */
+
+  const header = document.querySelector(".site-header");
+  const navigation = document.querySelector(".main-navigation");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  const sections = document.querySelectorAll(
+    "main section[id], main .hero[id]"
+  );
 
 
-    /* =====================================================
-       SMOOTH INTERNAL NAVIGATION
-       ===================================================== */
+  /* =======================================================
+     02 — SMOOTH NAVIGATION
+     ======================================================= */
 
-    navLinks.forEach((link) => {
+  navLinks.forEach((link) => {
 
-        link.addEventListener("click", (event) => {
+    link.addEventListener("click", (event) => {
 
-            const targetId = link.getAttribute("href");
+      const targetId = link.getAttribute("href");
 
-            if (!targetId || !targetId.startsWith("#")) {
-                return;
-            }
+      if (!targetId || !targetId.startsWith("#")) {
+        return;
+      }
 
-            const target = document.querySelector(targetId);
+      const target = document.querySelector(targetId);
 
-            if (!target) {
-                return;
-            }
+      if (!target) {
+        return;
+      }
 
-            event.preventDefault();
+      event.preventDefault();
 
-            const header = document.querySelector(".site-header");
+      const headerHeight = header
+        ? header.offsetHeight
+        : 0;
 
-            const headerHeight = header
-                ? header.offsetHeight
-                : 0;
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight;
 
-            const targetPosition =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight -
-                12;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
 
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: prefersReducedMotion
-                    ? "auto"
-                    : "smooth"
-            });
-
-        });
+      /*
+       * Keep the URL clean while still updating
+       * the browser history.
+       */
+      history.pushState(
+        null,
+        "",
+        targetId
+      );
 
     });
 
+  });
 
-    /* =====================================================
-       ACTIVE NAVIGATION
-       ===================================================== */
 
-    if ("IntersectionObserver" in window) {
+  /* =======================================================
+     03 — ACTIVE NAVIGATION
+     Highlights the section currently being viewed.
+     ======================================================= */
 
-        const observer = new IntersectionObserver(
-            (entries) => {
+  if ("IntersectionObserver" in window) {
 
-                entries.forEach((entry) => {
+    const sectionObserver =
+      new IntersectionObserver(
+        (entries) => {
 
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+          entries.forEach((entry) => {
 
-                    const currentId =
-                        entry.target.getAttribute("id");
-
-                    navLinks.forEach((link) => {
-
-                        const linkTarget =
-                            link.getAttribute("href");
-
-                        link.classList.toggle(
-                            "active",
-                            linkTarget === `#${currentId}`
-                        );
-
-                    });
-
-                });
-
-            },
-            {
-                rootMargin:
-                    "-25% 0px -65% 0px",
-                threshold: 0
+            if (!entry.isIntersecting) {
+              return;
             }
-        );
 
+            const currentId =
+              entry.target.getAttribute("id");
 
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-
-    }
-
-
-    /* =====================================================
-       HERO STATE
-       ===================================================== */
-
-    const hero = document.querySelector(".hero");
-
-    if (hero) {
-
-        const updateHeroState = () => {
-
-            const scrollPosition =
-                window.scrollY;
-
-            hero.classList.toggle(
-                "is-scrolled",
-                scrollPosition > 40
-            );
-
-        };
-
-        window.addEventListener(
-            "scroll",
-            updateHeroState,
-            {
-                passive: true
+            if (!currentId) {
+              return;
             }
-        );
 
-        updateHeroState();
+            navLinks.forEach((link) => {
 
-    }
+              const linkTarget =
+                link.getAttribute("href");
+
+              link.classList.toggle(
+                "active",
+                linkTarget === `#${currentId}`
+              );
+
+            });
+
+          });
+
+        },
+        {
+          rootMargin:
+            "-25% 0px -65% 0px",
+
+          threshold: 0
+        }
+      );
 
 
-    /* =====================================================
-       SUBTLE CONTENT REVEAL
-       ===================================================== */
+    sections.forEach((section) => {
+      sectionObserver.observe(section);
+    });
 
-    const revealElements = document.querySelectorAll(
-        ".section-label, " +
-        ".section-statement, " +
-        ".section-copy, " +
-        ".purpose-layout, " +
-        ".work-row, " +
-        ".ecosystem-unit, " +
-        ".publication-list > div, " +
-        ".participation-list > a, " +
-        ".connect-heading"
+  }
+
+
+  /* =======================================================
+     04 — HEADER SCROLL STATE
+     ======================================================= */
+
+  if (header) {
+
+    let lastScrollY = window.scrollY;
+
+    const updateHeader =
+      () => {
+
+        const currentScrollY =
+          window.scrollY;
+
+        /*
+         * Very subtle state change.
+         * No dramatic disappearing header.
+         */
+
+        if (currentScrollY > 12) {
+          header.classList.add(
+            "is-scrolled"
+          );
+        } else {
+          header.classList.remove(
+            "is-scrolled"
+          );
+        }
+
+        lastScrollY =
+          currentScrollY;
+
+      };
+
+
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      {
+        passive: true
+      }
+    );
+
+    updateHeader();
+
+  }
+
+
+  /* =======================================================
+     05 — MOBILE NAVIGATION
+     ======================================================= */
+
+  /*
+   * The mobile navigation is intentionally horizontal
+   * and left aligned.
+   *
+   * This allows all institutional sections to remain
+   * immediately accessible without introducing a
+   * hamburger-menu/app-like interface.
+   */
+
+  if (navigation) {
+
+    navigation.addEventListener(
+      "wheel",
+      (event) => {
+
+        if (
+          window.innerWidth <= 760 &&
+          Math.abs(event.deltaY) >
+          Math.abs(event.deltaX)
+        ) {
+
+          navigation.scrollLeft +=
+            event.deltaY;
+
+        }
+
+      },
+      {
+        passive: true
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     06 — KEYBOARD ACCESS
+     ======================================================= */
+
+  navLinks.forEach((link) => {
+
+    link.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          link.click();
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* =======================================================
+     07 — LIGHT CONTENT REVEAL
+     ======================================================= */
+
+  /*
+   * Extremely restrained.
+   *
+   * ASZOI should feel like an institution,
+   * not an animated technology product.
+   */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".work-row, " +
+      ".publication-list a, " +
+      ".participation-list a, " +
+      ".connect-entry"
     );
 
 
-    if (
-        !prefersReducedMotion &&
-        "IntersectionObserver" in window
-    ) {
+  if (
+    "IntersectionObserver" in window &&
+    revealElements.length
+  ) {
 
-        revealElements.forEach((element) => {
-            element.classList.add("reveal-ready");
-        });
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
 
+          entries.forEach((entry) => {
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
 
-                    entries.forEach((entry) => {
-
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
-
-                        entry.target.classList.add(
-                            "is-visible"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    });
-
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin:
-                        "0px 0px -45px 0px"
-                }
+            entry.target.classList.add(
+              "is-visible"
             );
 
+            observer.unobserve(
+              entry.target
+            );
 
-        revealElements.forEach((element) => {
-            revealObserver.observe(element);
-        });
+          });
 
-    }
-
-
-    /* =====================================================
-       FOOTER YEAR
-       ===================================================== */
-
-    const footerYear =
-        document.querySelector(".footer-bottom span");
-
-    if (footerYear) {
-
-        const currentYear =
-            new Date().getFullYear();
-
-        footerYear.textContent =
-            `© ${currentYear} ASZOI`;
-
-    }
+        },
+        {
+          threshold: 0.08
+        }
+      );
 
 
-    /* =====================================================
-       EXTERNAL / PLACEHOLDER LINKS
-       ===================================================== */
+    revealElements.forEach((element) => {
 
-    document.querySelectorAll(
-        'a[href="#"]'
-    ).forEach((link) => {
+      element.classList.add(
+        "reveal-item"
+      );
 
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-        });
+      revealObserver.observe(
+        element
+      );
 
     });
+
+  }
+
+
+  /* =======================================================
+     08 — EXTERNAL LINKS
+     ======================================================= */
+
+  const externalLinks =
+    document.querySelectorAll(
+      'a[href^="http"]'
+    );
+
+
+  externalLinks.forEach((link) => {
+
+    /*
+     * Only apply to links leaving ASZOI.
+     */
+
+    try {
+
+      const url =
+        new URL(
+          link.href,
+          window.location.href
+        );
+
+      if (
+        url.hostname !==
+        window.location.hostname
+      ) {
+
+        link.setAttribute(
+          "target",
+          "_blank"
+        );
+
+        link.setAttribute(
+          "rel",
+          "noopener noreferrer"
+        );
+
+      }
+
+    } catch (error) {
+
+      /*
+       * Invalid URLs are left untouched.
+       */
+
+    }
+
+  });
+
+
+  /* =======================================================
+     09 — CURRENT YEAR
+     ======================================================= */
+
+  const yearElements =
+    document.querySelectorAll(
+      "[data-current-year]"
+    );
+
+
+  yearElements.forEach((element) => {
+
+    element.textContent =
+      new Date().getFullYear();
+
+  });
+
+
+  /* =======================================================
+     10 — PAGE READY
+     ======================================================= */
+
+  document.documentElement.classList.add(
+    "js-ready"
+  );
 
 });
