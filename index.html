@@ -1,852 +1,1342 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ASZOI — Communication & Media Interface</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ASZOI — Communication, Media & Public Interface</title>
 
     <meta
         name="description"
         content="ASZOI is the communication and media interface of its wider institutional ecosystem, connecting operational work with the public, contributors, collaborators, and relevant opportunities."
     >
 
-    <meta name="theme-color" content="#7A0019">
+    <meta
+        name="theme-color"
+        content="#7A0019"
+    >
 
-    <!-- Premium institutional typography -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="logo.png"
+    >
+
+    <!-- =====================================================
+         TYPOGRAPHY
+         ===================================================== -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Main stylesheet -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
 
-    <header class="site-header">
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-        <nav
-            class="main-navigation"
-            aria-label="Main navigation"
+<header class="site-header">
+
+    <nav
+        class="main-navigation"
+        aria-label="Main navigation"
+    >
+
+        <a
+            href="#home"
+            class="nav-link active"
         >
+            Home
+        </a>
 
-            <a href="#home" class="nav-link active">
-                Home
-            </a>
-
-            <a href="#about" class="nav-link">
-                About
-            </a>
-
-            <a href="#work" class="nav-link">
-                Work
-            </a>
-
-            <a href="#publication" class="nav-link">
-                Publication
-            </a>
-
-            <a href="#participate" class="nav-link">
-                Participate
-            </a>
-
-            <a href="#collaborate" class="nav-link">
-                Collaborate
-            </a>
-
-            <a href="#contact" class="nav-link">
-                Contact
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <main id="home">
-
-
-        <!-- =========================
-             HERO / PROFILE BANNER
-        ========================== -->
-
-        <section class="hero">
-
-            <div class="hero-banner">
-
-                <div class="hero-logo">
-
-                    <img
-                        src="logo.png"
-                        alt="ASZOI"
-                    >
-
-                </div>
-
-
-                <div class="hero-content">
-
-                    <p class="hero-kicker">
-                        ASZOI
-                    </p>
-
-                    <h1>
-                        Connecting work with
-                        the people it needs.
-                    </h1>
-
-                    <p class="hero-description">
-                        ASZOI is the communication and media interface
-                        of its wider institutional ecosystem, connecting
-                        operational work with the public, contributors,
-                        collaborators, and relevant opportunities.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-fields">
-
-                <span>Communication</span>
-                <span>Media</span>
-                <span>Publications</span>
-                <span>Public Relations</span>
-                <span>Participation</span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section
-            class="section section-light"
-            id="about"
+        <a
+            href="#about"
+            class="nav-link"
         >
+            About
+        </a>
 
-            <div class="section-label">
-                01 / ABOUT ASZOI
-            </div>
-
-
-            <div class="two-column">
-
-                <div class="section-statement">
-
-                    <h2>
-                        A communication and media
-                        interface for institutional work.
-                    </h2>
-
-                </div>
-
-
-                <div class="section-copy">
-
-                    <p class="lead">
-                        ASZOI connects the work of the wider
-                        institutional ecosystem with the people
-                        who need to know about it, contribute to it,
-                        collaborate with it, or engage with its outcomes.
-                    </p>
-
-                    <p>
-                        Its role is communication and media:
-                        shaping public-facing information,
-                        supporting institutional representation,
-                        documenting work, managing relationships,
-                        and creating meaningful pathways for participation.
-                    </p>
-
-                    <a
-                        href="#work"
-                        class="editorial-link"
-                    >
-                        Explore ASZOI
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PURPOSE
-        ========================== -->
-
-        <section
-            class="section section-crimson"
+        <a
+            href="#work"
+            class="nav-link"
         >
+            Work
+        </a>
 
-            <div class="section-label section-label-light">
-                02 / PURPOSE
-            </div>
-
-
-            <div class="purpose-layout">
-
-                <h2>
-                    The right work should
-                    reach the right people.
-                </h2>
-
-
-                <div class="purpose-copy">
-
-                    <p>
-                        Meaningful work can lose its value when
-                        people cannot find it, understand it,
-                        contribute to it, or connect it with
-                        relevant opportunities.
-                    </p>
-
-                    <p>
-                        ASZOI exists at that interface.
-                        It helps turn institutional work into
-                        clear public communication and creates
-                        the channels through which people can
-                        discover and engage with it.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             WORK
-        ========================== -->
-
-        <section
-            class="section section-light"
-            id="work"
+        <a
+            href="#publication"
+            class="nav-link"
         >
-
-            <div class="section-label">
-                03 / WORK
-            </div>
-
-
-            <div class="work-introduction">
-
-                <h2>
-                    Communication that
-                    supports the work behind it.
-                </h2>
-
-            </div>
-
-
-            <div class="work-list">
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        01
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Communication
-                        </h3>
-
-                        <p>
-                            Clear and consistent communication
-                            across institutional and public channels.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#contact"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        02
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Media
-                        </h3>
-
-                        <p>
-                            Public-facing content that communicates
-                            ongoing work, developments, and ideas.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#contact"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        03
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Publications
-                        </h3>
-
-                        <p>
-                            Organising and presenting reports,
-                            research outputs, documents, and
-                            institutional material.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#publication"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        04
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Public Relations
-                        </h3>
-
-                        <p>
-                            Managing institutional representation
-                            and relationships with relevant
-                            external audiences.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#contact"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        05
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Participation
-                        </h3>
-
-                        <p>
-                            Creating accessible pathways for people
-                            to contribute knowledge, skills,
-                            perspectives, or effort.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#participate"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-
-                <article class="work-row">
-
-                    <span class="work-number">
-                        06
-                    </span>
-
-                    <div class="work-content">
-
-                        <h3>
-                            Public Interface
-                        </h3>
-
-                        <p>
-                            Providing the external-facing structure
-                            through which the wider ecosystem can
-                            be understood and engaged with.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="#contact"
-                        class="editorial-link"
-                    >
-                        Explore
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ECOSYSTEM
-        ========================== -->
-
-        <section
-            class="section section-white"
+            Publication
+        </a>
+
+        <a
+            href="#participate"
+            class="nav-link"
         >
+            Participate
+        </a>
 
-            <div class="section-label">
-                04 / THE ECOSYSTEM
-            </div>
-
-
-            <div class="ecosystem-heading">
-
-                <h2>
-                    Different work.
-                    <em>One connected ecosystem.</em>
-                </h2>
-
-
-                <p>
-                    ASZOI operates as the communication and
-                    media interface around the wider ecosystem,
-                    helping its operational work reach the
-                    people and opportunities relevant to it.
-                </p>
-
-            </div>
-
-
-            <div class="ecosystem-line">
-
-
-                <div class="ecosystem-unit">
-
-                    <span>01</span>
-
-                    <h3>
-                        Operational Work
-                    </h3>
-
-                    <p>
-                        The wider ecosystem's
-                        substantive work and activities.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="ecosystem-connector"
-                    aria-hidden="true"
-                ></div>
-
-
-                <div class="ecosystem-unit">
-
-                    <span>02</span>
-
-                    <h3>
-                        Institutional Work
-                    </h3>
-
-                    <p>
-                        Planning, analysis,
-                        coordination, and development.
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="ecosystem-connector"
-                    aria-hidden="true"
-                ></div>
-
-
-                <div class="ecosystem-unit">
-
-                    <span>03</span>
-
-                    <h3>
-                        ASZOI
-                    </h3>
-
-                    <p>
-                        Communication, media,
-                        public relations, and participation.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PUBLICATION
-        ========================== -->
-
-        <section
-            class="section section-light"
-            id="publication"
+        <a
+            href="#connect"
+            class="nav-link"
         >
+            Connect
+        </a>
 
-            <div class="section-label">
-                05 / PUBLICATION
-            </div>
-
-
-            <div class="two-column">
-
-                <div class="section-statement">
-
-                    <h2>
-                        A public record of
-                        institutional work.
-                    </h2>
-
-                </div>
-
-
-                <div class="section-copy">
-
-                    <p class="lead">
-                        The Publication Repository brings
-                        documented knowledge and institutional
-                        output into one accessible record.
-                    </p>
-
-
-                    <div class="publication-list">
-
-                        <div>
-                            <strong>
-                                Research
-                            </strong>
-
-                            <span>
-                                Research papers, findings,
-                                and analytical work.
-                            </span>
-                        </div>
-
-
-                        <div>
-                            <strong>
-                                Reports
-                            </strong>
-
-                            <span>
-                                Institutional reports,
-                                assessments, and documented work.
-                            </span>
-                        </div>
-
-
-                        <div>
-                            <strong>
-                                Briefs
-                            </strong>
-
-                            <span>
-                                Concise publications addressing
-                                specific questions or developments.
-                            </span>
-                        </div>
-
-
-                        <div>
-                            <strong>
-                                Institutional Documents
-                            </strong>
-
-                            <span>
-                                Formal records, statements,
-                                frameworks, and official material.
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        href="#publication"
-                        class="editorial-link"
-                    >
-                        Explore Publication Repository
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PARTICIPATE
-        ========================== -->
-
-        <section
-            class="section section-navy"
-            id="participate"
+        <a
+            href="#contact"
+            class="nav-link"
         >
+            Contact
+        </a>
 
-            <div class="section-label section-label-light">
-                06 / PARTICIPATE
-            </div>
+    </nav>
 
-
-            <div class="participate-heading">
-
-                <h2>
-                    Find the right way
-                    to take part.
-                </h2>
-
-
-                <p>
-                    Participation can take many forms.
-                    ASZOI provides pathways for people
-                    to contribute, collaborate, engage,
-                    and discover relevant opportunities.
-                </p>
-
-            </div>
-
-
-            <div class="participation-list">
-
-
-                <a href="#contact">
-
-                    <span>
-                        Contribute
-                    </span>
-
-                    <small>
-                        Offer knowledge, expertise,
-                        skills, or practical support.
-                    </small>
-
-                    <b aria-hidden="true">
-                        →
-                    </b>
-
-                </a>
+</header>
 
 
 
-                <a
-                    href="#collaborate"
-                    id="collaborate"
-                >
-
-                    <span>
-                        Collaborate
-                    </span>
-
-                    <small>
-                        Work with the wider ecosystem
-                        where interests and objectives align.
-                    </small>
-
-                    <b aria-hidden="true">
-                        →
-                    </b>
-
-                </a>
+<main id="home">
 
 
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-                <a href="#contact">
-
-                    <span>
-                        Engage
-                    </span>
-
-                    <small>
-                        Follow developments, discussions,
-                        and public-facing work.
-                    </small>
-
-                    <b aria-hidden="true">
-                        →
-                    </b>
-
-                </a>
+<section class="hero" aria-labelledby="hero-title">
 
 
-
-                <a href="#publication">
-
-                    <span>
-                        Explore
-                    </span>
-
-                    <small>
-                        Discover publications, ongoing work,
-                        and opportunities to become involved.
-                    </small>
-
-                    <b aria-hidden="true">
-                        →
-                    </b>
-
-                </a>
+    <div class="hero-banner">
 
 
-            </div>
+        <!-- ASZOI identity -->
 
-        </section>
+        <div class="hero-logo">
 
-
-
-        <!-- =========================
-             CONNECT
-        ========================== -->
-
-        <section
-            class="section section-white"
-            id="contact"
-        >
-
-            <div class="section-label">
-                07 / CONNECT
-            </div>
-
-
-            <div class="connect-heading">
-
-                <h2>
-                    Stay connected
-                    to the work.
-                </h2>
-
-
-                <p>
-                    Follow ASZOI's official channels for
-                    publications, announcements, discussions,
-                    opportunities, and institutional developments.
-                </p>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="site-footer">
-
-        <div class="footer-brand">
-
-            <a
-                href="#home"
-                aria-label="ASZOI Home"
+            <img
+                src="logo.png"
+                alt="ASZOI"
+                width="220"
+                height="220"
             >
 
-                <img
-                    src="logo.png"
-                    alt="ASZOI"
-                >
+        </div>
 
-            </a>
+
+        <!-- Main statement -->
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                ASZOI
+            </div>
+
+            <h1 id="hero-title">
+                Connecting work with
+                the people it needs.
+            </h1>
+
+            <p class="hero-description">
+                ASZOI is the communication and media interface
+                of its wider institutional ecosystem, connecting
+                operational work with the public, contributors,
+                collaborators, and relevant opportunities.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Functional scope -->
+
+    <div class="hero-fields">
+
+        <span>Communication</span>
+
+        <span>Media</span>
+
+        <span>Publications</span>
+
+        <span>Public Relations</span>
+
+        <span>Participation</span>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     01 — ABOUT
+     Ivory
+     ========================================================= -->
+
+<section
+    class="section section-about section-light"
+    id="about"
+    aria-labelledby="about-title"
+>
+
+
+    <div class="section-label">
+        01 / About
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="section-statement">
+
+            <h2 id="about-title">
+                A communication
+                interface for
+                institutional work.
+            </h2>
+
+        </div>
+
+
+        <div class="section-copy">
+
+            <p class="lead">
+                ASZOI exists to make institutional work
+                visible, understandable, accessible, and
+                connected to the people who can contribute
+                to it.
+            </p>
 
             <p>
-                Communication &amp; Media Interface
+                We communicate the work of the wider ASZOI
+                ecosystem, support its public presence,
+                organise its publications and media,
+                and create pathways through which people
+                can discover where their knowledge,
+                skills, resources, or interest may be useful.
+            </p>
+
+            <a
+                href="#purpose"
+                class="editorial-link"
+            >
+                <span>Understand our purpose</span>
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     02 — PURPOSE
+     Royal Crimson
+     ========================================================= -->
+
+<section
+    class="section section-purpose section-crimson"
+    id="purpose"
+    aria-labelledby="purpose-title"
+>
+
+
+    <div class="section-label section-label-light">
+        02 / Purpose
+    </div>
+
+
+    <div class="purpose-layout">
+
+
+        <div>
+
+            <h2 id="purpose-title">
+                The right work
+                should reach the
+                right people.
+            </h2>
+
+        </div>
+
+
+        <div class="purpose-copy">
+
+            <p>
+                Good work does not exist in isolation.
+                It needs audiences, contributors,
+                collaborators, institutional relationships,
+                and opportunities to move forward.
+            </p>
+
+            <p>
+                ASZOI builds the communication layer that
+                helps those connections happen.
             </p>
 
         </div>
 
 
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     03 — WORK
+     Ivory
+     ========================================================= -->
+
+<section
+    class="section section-work section-light"
+    id="work"
+    aria-labelledby="work-title"
+>
+
+
+    <div class="section-label">
+        03 / Work
+    </div>
+
+
+    <div class="work-introduction">
+
+        <h2 id="work-title">
+            What ASZOI does.
+        </h2>
+
+    </div>
+
+
+    <div class="work-list">
+
+
+        <!-- Communication -->
+
+        <article class="work-row">
+
+            <div class="work-number">
+                01
+            </div>
+
+            <div class="work-content">
+
+                <h3>
+                    Communication
+                </h3>
+
+                <p>
+                    Translate institutional work into clear,
+                    accessible communication for the people
+                    it is intended to reach.
+                </p>
+
+            </div>
+
+            <a
+                href="#connect"
+                class="editorial-link"
+            >
+                Explore <span aria-hidden="true">→</span>
+            </a>
+
+        </article>
+
+
+        <!-- Media -->
+
+        <article class="work-row">
+
+            <div class="work-number">
+                02
+            </div>
+
+            <div class="work-content">
+
+                <h3>
+                    Media
+                </h3>
+
+                <p>
+                    Develop and maintain public-facing media
+                    channels that carry institutional work
+                    beyond its immediate environment.
+                </p>
+
+            </div>
+
+            <a
+                href="#connect"
+                class="editorial-link"
+            >
+                Explore <span aria-hidden="true">→</span>
+            </a>
+
+        </article>
+
+
+        <!-- Publications -->
+
+        <article class="work-row">
+
+            <div class="work-number">
+                03
+            </div>
+
+            <div class="work-content">
+
+                <h3>
+                    Publications
+                </h3>
+
+                <p>
+                    Organise, present, and make institutional
+                    publications discoverable through a
+                    structured public repository.
+                </p>
+
+            </div>
+
+            <a
+                href="#publication"
+                class="editorial-link"
+            >
+                Explore <span aria-hidden="true">→</span>
+            </a>
+
+        </article>
+
+
+        <!-- Public Relations -->
+
+        <article class="work-row">
+
+            <div class="work-number">
+                04
+            </div>
+
+            <div class="work-content">
+
+                <h3>
+                    Public Relations
+                </h3>
+
+                <p>
+                    Build relationships between institutional
+                    work and its wider public environment.
+                </p>
+
+            </div>
+
+            <a
+                href="#connect"
+                class="editorial-link"
+            >
+                Explore <span aria-hidden="true">→</span>
+            </a>
+
+        </article>
+
+
+        <!-- Participation -->
+
+        <article class="work-row">
+
+            <div class="work-number">
+                05
+            </div>
+
+            <div class="work-content">
+
+                <h3>
+                    Participation
+                </h3>
+
+                <p>
+                    Help people identify meaningful ways to
+                    contribute, collaborate, participate,
+                    or engage with the ecosystem.
+                </p>
+
+            </div>
+
+            <a
+                href="#participate"
+                class="editorial-link"
+            >
+                Explore <span aria-hidden="true">→</span>
+            </a>
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     04 — ECOSYSTEM
+     White
+     ========================================================= -->
+
+<section
+    class="section section-ecosystem section-white"
+    id="ecosystem"
+    aria-labelledby="ecosystem-title"
+>
+
+
+    <div class="section-label">
+        04 / Ecosystem
+    </div>
+
+
+    <div class="ecosystem-heading">
+
+        <h2 id="ecosystem-title">
+            One ecosystem.
+            <em>Different functions.</em>
+        </h2>
+
+        <p>
+            ASZOI operates as the communication and media
+            interface around a wider institutional system.
+        </p>
+
+    </div>
+
+
+    <div class="ecosystem-line">
+
+
+        <!-- ASZOP -->
+
+        <div class="ecosystem-unit">
+
+            <span>
+                ASZOP
+            </span>
+
+            <h3>
+                Observation
+            </h3>
+
+            <p>
+                Tracks signals, patterns, data, and changes
+                across the wider system.
+            </p>
+
+        </div>
+
+
+        <div
+            class="ecosystem-connector"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- ASZON -->
+
+        <div class="ecosystem-unit">
+
+            <span>
+                ASZON
+            </span>
+
+            <h3>
+                Planning
+            </h3>
+
+            <p>
+                Connects evidence, planning, and execution
+                within the institutional system.
+            </p>
+
+        </div>
+
+
+        <div
+            class="ecosystem-connector"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- ASZOA -->
+
+        <div class="ecosystem-unit">
+
+            <span>
+                ASZOA
+            </span>
+
+            <h3>
+                Action
+            </h3>
+
+            <p>
+                Turns planning and findings into practical
+                work, outcomes, and new knowledge.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     05 — PUBLICATION
+     Ivory
+     ========================================================= -->
+
+<section
+    class="section section-publication section-light"
+    id="publication"
+    aria-labelledby="publication-title"
+>
+
+
+    <div class="section-label">
+        05 / Publication
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="section-statement">
+
+            <h2 id="publication-title">
+                A public record
+                of the work.
+            </h2>
+
+        </div>
+
+
+        <div class="section-copy">
+
+            <p class="lead">
+                The ASZOI Publication Repository brings
+                together the published record of work across
+                the wider ecosystem.
+            </p>
+
+            <p>
+                It provides a structured route to reports,
+                papers, records, publications, and other
+                materials that should remain accessible
+                beyond the moment of their release.
+            </p>
+
+
+            <div class="publication-list">
+
+                <div>
+
+                    <strong>
+                        Repository
+                    </strong>
+
+                    <span>
+                        Publications and institutional records
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Access
+                    </strong>
+
+                    <span>
+                        Browse, discover, and explore published work
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Record
+                    </strong>
+
+                    <span>
+                        A continuing public archive of institutional output
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#connect"
+                class="editorial-link"
+            >
+                <span>Explore the repository</span>
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     06 — PARTICIPATE
+     Royal Crimson
+     ========================================================= -->
+
+<section
+    class="section section-participate section-crimson"
+    id="participate"
+    aria-labelledby="participate-title"
+>
+
+
+    <div class="section-label section-label-light">
+        06 / Participate
+    </div>
+
+
+    <div class="participate-heading">
+
+        <h2 id="participate-title">
+            There are many
+            ways to take part.
+        </h2>
+
+        <p>
+            Participation is not limited to one role.
+            ASZOI connects people with the forms of
+            contribution that best fit their interests,
+            capabilities, and the needs of the work.
+        </p>
+
+    </div>
+
+
+    <div class="participation-list">
+
+
+        <a href="#connect">
+
+            <span>
+                Contributors
+            </span>
+
+            <small>
+                Bring knowledge, skills, ideas, or resources
+                to relevant work.
+            </small>
+
+            <b aria-hidden="true">
+                →
+            </b>
+
+        </a>
+
+
+        <a href="#connect">
+
+            <span>
+                Collaborators
+            </span>
+
+            <small>
+                Work with the ecosystem on projects,
+                initiatives, and institutional opportunities.
+            </small>
+
+            <b aria-hidden="true">
+                →
+            </b>
+
+        </a>
+
+
+        <a href="#connect">
+
+            <span>
+                Researchers &amp; practitioners
+            </span>
+
+            <small>
+                Connect expertise with work where it can
+                produce meaningful value.
+            </small>
+
+            <b aria-hidden="true">
+                →
+            </b>
+
+        </a>
+
+
+        <a href="#connect">
+
+            <span>
+                Public participants
+            </span>
+
+            <small>
+                Follow, discuss, question, share, and engage
+                with the public-facing work.
+            </small>
+
+            <b aria-hidden="true">
+                →
+            </b>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     07 — CONNECT
+     Ivory
+     ========================================================= -->
+
+<section
+    class="section section-connect section-light"
+    id="connect"
+    aria-labelledby="connect-title"
+>
+
+
+    <div class="section-label">
+        07 / Connect
+    </div>
+
+
+    <div class="connect-heading">
+
+
+        <h2 id="connect-title">
+            Stay connected
+            to the work.
+        </h2>
+
+
+        <p>
+            Follow ASZOI through the channel most relevant
+            to the way you want to communicate, discover,
+            participate, or engage with the wider ecosystem.
+        </p>
+
+
+    </div>
+
+
+    <div class="connect-groups">
+
+
+        <!-- =================================================
+             COMMUNICATION
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    ✉
+                </span>
+
+                <div>
+
+                    <small>
+                        Communication
+                    </small>
+
+                    <h3>
+                        Direct communication
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- Replace # with real email address -->
+
+            <a
+                href="#"
+                class="connect-link"
+            >
+
+                <span>
+                    Email ASZOI
+                </span>
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MEDIA
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    𝕏
+                </span>
+
+                <div>
+
+                    <small>
+                        Media
+                    </small>
+
+                    <h3>
+                        Public channels
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="connect-links">
+
+                <!-- Replace # with actual X URL -->
+
+                <a
+                    href="#"
+                    class="connect-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        X
+                    </span>
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <!-- Replace # with actual LinkedIn URL -->
+
+                <a
+                    href="#"
+                    class="connect-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PUBLICATION
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    ▤
+                </span>
+
+                <div>
+
+                    <small>
+                        Publication
+                    </small>
+
+                    <h3>
+                        Publication Repository
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#publication"
+                class="connect-link"
+            >
+
+                <span>
+                    Explore publications
+                </span>
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PUBLIC RELATIONS
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    ◎
+                </span>
+
+                <div>
+
+                    <small>
+                        Public Relations
+                    </small>
+
+                    <h3>
+                        Public-facing channels
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="connect-links">
+
+
+                <!-- Instagram -->
+
+                <a
+                    href="#"
+                    class="connect-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        Instagram
+                    </span>
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <!-- Facebook -->
+
+                <a
+                    href="#"
+                    class="connect-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        Facebook
+                    </span>
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <!-- YouTube -->
+
+                <a
+                    href="#"
+                    class="connect-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <span>
+                        YouTube
+                    </span>
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PARTICIPATION
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    ♙
+                </span>
+
+                <div>
+
+                    <small>
+                        Participation
+                    </small>
+
+                    <h3>
+                        Find a way to take part
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#participate"
+                class="connect-link"
+            >
+
+                <span>
+                    Participate with ASZOI
+                </span>
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             PUBLIC INTERFACE
+             ================================================= -->
+
+        <div class="connect-group">
+
+
+            <div class="connect-group-heading">
+
+                <span
+                    class="connect-icon"
+                    aria-hidden="true"
+                >
+                    ◉
+                </span>
+
+                <div>
+
+                    <small>
+                        Public Interface
+                    </small>
+
+                    <h3>
+                        Community &amp; discussion
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- Replace # with actual Discord URL -->
+
+            <a
+                href="#"
+                class="connect-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span>
+                    Join Discord
+                </span>
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT ANCHOR
+     ========================================================= -->
+
+<section
+    id="contact"
+    class="contact-anchor"
+    aria-hidden="true"
+></section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     Navy
+     ========================================================= -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-main">
+
+
+        <!-- ASZOI -->
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="ASZOI"
+                width="76"
+                height="76"
+            >
+
+            <p>
+                Communication and media interface
+                of the wider ASZOI ecosystem.
+            </p>
+
+        </div>
+
+
+
+        <!-- NAVIGATE -->
+
         <div class="footer-column">
 
-            <span class="footer-heading">
+            <div class="footer-heading">
                 Navigate
-            </span>
+            </div>
 
             <a href="#home">
                 Home
@@ -868,8 +1358,8 @@
                 Participate
             </a>
 
-            <a href="#collaborate">
-                Collaborate
+            <a href="#connect">
+                Connect
             </a>
 
             <a href="#contact">
@@ -879,109 +1369,91 @@
         </div>
 
 
+
+        <!-- PUBLICATION -->
+
         <div class="footer-column">
 
-            <span class="footer-heading">
+            <div class="footer-heading">
                 Publication
-            </span>
+            </div>
 
             <a href="#publication">
                 Publication Repository
             </a>
 
+            <a href="#publication">
+                Published Work
+            </a>
+
         </div>
 
+
+
+        <!-- CONNECT -->
 
         <div class="footer-column">
 
-            <span class="footer-heading">
+            <div class="footer-heading">
                 Connect
-            </span>
-
-
-            <div class="social-links">
-
-                <!-- Replace # with official URLs -->
-
-                <a
-                    href="#"
-                    aria-label="Email"
-                    title="Email"
-                >
-                    ✉
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Discord"
-                    title="Discord"
-                >
-                    D
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="X"
-                    title="X"
-                >
-                    𝕏
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="LinkedIn"
-                    title="LinkedIn"
-                >
-                    in
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Instagram"
-                    title="Instagram"
-                >
-                    ◎
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="Facebook"
-                    title="Facebook"
-                >
-                    f
-                </a>
-
-                <a
-                    href="#"
-                    aria-label="YouTube"
-                    title="YouTube"
-                >
-                    ▶
-                </a>
-
             </div>
 
+            <a href="#connect">
+                Communication
+            </a>
+
+            <a href="#connect">
+                Media
+            </a>
+
+            <a href="#connect">
+                Publication
+            </a>
+
+            <a href="#connect">
+                Public Relations
+            </a>
+
+            <a href="#connect">
+                Participation
+            </a>
+
+            <a href="#connect">
+                Public Interface
+            </a>
+
         </div>
 
 
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 ASZOI
-            </span>
-
-            <span>
-                Communication &amp; Media Interface
-            </span>
-
-        </div>
-
-    </footer>
+    </div>
 
 
 
-    <script src="script.js"></script>
+    <!-- Footer bottom -->
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 ASZOI
+        </span>
+
+        <span>
+            Communication · Media · Publications · Public Relations · Participation
+        </span>
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
-```
