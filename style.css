@@ -583,11 +583,9 @@ p {
    ========================================================= */
 
 .section-about {
-  background: var(--crimson);
-
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--black);
 }
-
 
 .two-column {
   display: grid;
@@ -679,11 +677,9 @@ p {
    ========================================================= */
 
 .section-purpose {
-  background: var(--ivory);
-
-  color: var(--black);
+  background: var(--crimson);
+  color: var(--ivory);
 }
-
 
 .purpose-layout {
   display: grid;
@@ -723,9 +719,8 @@ p {
    ========================================================= */
 
 .section-work {
-  background: var(--deep-crimson);
-
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--black);
 }
 
 
@@ -974,9 +969,8 @@ p {
    ========================================================= */
 
 .section-publication {
-  background: var(--crimson);
-
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--black);
 }
 
 
@@ -1048,9 +1042,8 @@ p {
    ========================================================= */
 
 .section-participate {
-  background: var(--ivory);
-
-  color: var(--black);
+  background: var(--crimson);
+  color: var(--ivory);
 }
 
 
@@ -1167,11 +1160,9 @@ p {
    ========================================================= */
 
 .section-connect {
-  background: var(--deep-crimson);
-
-  color: var(--ivory);
+  background: var(--ivory);
+  color: var(--black);
 }
-
 
 .connect-heading {
   display: grid;
