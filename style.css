@@ -1035,6 +1035,10 @@ p {
 }
 
 
+/* ---------------------------------------------------------
+   Publication list
+   --------------------------------------------------------- */
+
 .publication-list {
   margin-top:
     clamp(62px, 8vw, 100px);
@@ -1045,6 +1049,11 @@ p {
 }
 
 
+/* ---------------------------------------------------------
+   Publication entries
+   Open institutional rows
+   --------------------------------------------------------- */
+
 .publication-list a {
   display: grid;
 
@@ -1053,12 +1062,15 @@ p {
     minmax(0, 1fr)
     auto;
 
-  gap: 30px;
+  gap:
+    30px;
 
   align-items: center;
 
   padding:
     24px 0 27px;
+
+  color: var(--paper);
 
   border-bottom:
     1px solid
@@ -1070,36 +1082,162 @@ p {
 }
 
 
+/* ---------------------------------------------------------
+   Hover
+   --------------------------------------------------------- */
+
 .publication-list a:hover {
   padding-left: 10px;
 }
 
 
+/* ---------------------------------------------------------
+   Publication title
+   Primary text — white
+   --------------------------------------------------------- */
+
 .publication-list strong {
-  color: var(--paper);
+  margin: 0;
+
+  color: #FFFFFF;
 
   font-family: var(--serif);
 
   font-size: 20px;
 
   font-weight: 400;
+
+  line-height: 1.35;
 }
 
+
+/* ---------------------------------------------------------
+   Publication description
+   Secondary text — restrained white
+   --------------------------------------------------------- */
 
 .publication-list span:nth-child(2) {
   color:
-    rgba(245, 241, 232, 0.62);
+    rgba(255, 255, 255, 0.68);
+
+  font-family: var(--sans);
 
   font-size: 15px;
+
+  line-height: 1.55;
 }
 
+
+/* ---------------------------------------------------------
+   Publication action
+   Brass institutional accent
+   --------------------------------------------------------- */
 
 .publication-list span:last-child {
   color: var(--brass);
 
+  font-family: var(--sans);
+
   font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform 180ms var(--ease);
 }
 
+
+/* ---------------------------------------------------------
+   Action movement
+   --------------------------------------------------------- */
+
+.publication-list a:hover span:last-child {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .publication-list a {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    gap:
+      10px 18px;
+
+    padding:
+      22px 0 24px;
+  }
+
+
+  .publication-list a span:nth-child(2) {
+    grid-column:
+      1 / -1;
+
+    order: 3;
+
+    max-width: 620px;
+
+    font-size: 14px;
+  }
+
+
+  .publication-list strong {
+    font-size: 19px;
+
+    line-height: 1.35;
+  }
+
+
+  .publication-list span:last-child {
+    align-self: start;
+
+    padding-top: 4px;
+
+    font-size: 17px;
+  }
+
+
+  .publication-list a:hover {
+    padding-left: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .publication-list a {
+    gap:
+      8px 14px;
+  }
+
+
+  .publication-list strong {
+    font-size: 18px;
+  }
+
+
+  .publication-list a span:nth-child(2) {
+    font-size: 14px;
+  }
+
+
+  .publication-list span:last-child {
+    font-size: 16px;
+  }
+
+}
 
 /* =========================================================
    15 — PARTICIPATE
