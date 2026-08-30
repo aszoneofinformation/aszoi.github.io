@@ -5,11 +5,11 @@
    VISUAL SYSTEM
    ---------------------------------------------------------
    Premium Institutional
+   Traditional / Authoritative
    British Institutional
    Editorial
-   Traditional / Authoritative
    Restrained
-   Professional
+   Open
    ========================================================= */
 
 
@@ -20,33 +20,31 @@
 :root {
 
   /* -------------------------------------------------------
-     PRIMARY PALETTE
+     Core palette
      ------------------------------------------------------- */
 
-  --burgundy: #6F1020;
-  --burgundy-dark: #4D0B16;
-  --burgundy-deep: #380811;
-
-  --navy: #182A43;
-  --navy-deep: #101D30;
+  --burgundy: #6F1024;
+  --burgundy-dark: #4D0A18;
+  --burgundy-deep: #3B0712;
 
   --paper: #F5F1E8;
-  --paper-light: #FAF8F3;
+  --paper-soft: #EEE9DD;
+
   --white: #FFFFFF;
 
-  --ink: #202020;
-  --ink-soft: #3F3D39;
-  --muted: #716D66;
-  --stone: #AAA49A;
+  --black: #191919;
+  --black-soft: #303030;
 
-  --brass: #B59652;
-  --brass-dark: #92763B;
+  --navy: #172A46;
 
-  --rose: #E7D8DA;
+  --brass: #B89A52;
+  --brass-light: #C7AE70;
+
+  --stone: #A9A398;
 
 
   /* -------------------------------------------------------
-     TYPOGRAPHY
+     Typography
      ------------------------------------------------------- */
 
   --serif:
@@ -63,37 +61,37 @@
 
 
   /* -------------------------------------------------------
-     LAYOUT
+     Layout
      ------------------------------------------------------- */
 
   --page-width: 1380px;
 
   --page-padding:
-    clamp(22px, 5vw, 82px);
+    clamp(24px, 5vw, 82px);
 
   --section-padding:
-    clamp(82px, 9vw, 145px);
+    clamp(88px, 9vw, 145px);
 
 
   /* -------------------------------------------------------
-     BORDERS
+     Lines
      ------------------------------------------------------- */
 
-  --line-dark:
-    rgba(32, 32, 32, 0.16);
-
-  --line-dark-strong:
-    rgba(32, 32, 32, 0.26);
-
   --line-light:
-    rgba(245, 241, 232, 0.18);
+    rgba(255, 255, 255, 0.20);
 
   --line-light-strong:
-    rgba(245, 241, 232, 0.28);
+    rgba(255, 255, 255, 0.30);
+
+  --line-dark:
+    rgba(25, 25, 25, 0.16);
+
+  --line-dark-strong:
+    rgba(25, 25, 25, 0.24);
 
 
   /* -------------------------------------------------------
-     MOTION
+     Motion
      ------------------------------------------------------- */
 
   --ease:
@@ -115,8 +113,6 @@
 
 html {
   scroll-behavior: smooth;
-
-  background: var(--paper);
 }
 
 
@@ -125,16 +121,21 @@ body {
 
   background: var(--paper);
 
-  color: var(--ink);
+  color: var(--black);
 
   font-family: var(--sans);
 
   font-size: 17px;
 
-  line-height: 1.68;
+  line-height: 1.65;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+body.menu-open {
+  overflow: hidden;
 }
 
 
@@ -170,7 +171,7 @@ button {
 ::selection {
   background: var(--brass);
 
-  color: var(--white);
+  color: var(--black);
 }
 
 
@@ -188,7 +189,7 @@ button {
 
   padding: 12px 18px;
 
-  background: var(--ink);
+  background: var(--black);
 
   color: var(--white);
 
@@ -219,50 +220,44 @@ p {
 h1,
 h2,
 h3 {
-  margin-bottom: 0;
-
-  color: inherit;
-
   font-family: var(--serif);
 
   font-weight: 400;
 
   letter-spacing: -0.025em;
 
-  line-height: 1.15;
+  line-height: 1.16;
 }
 
 
 h1 {
   font-size:
-    clamp(46px, 6.7vw, 98px);
+    clamp(48px, 7vw, 104px);
 }
 
 
 h2 {
   font-size:
-    clamp(39px, 5vw, 74px);
+    clamp(40px, 5.2vw, 78px);
 }
 
 
 h3 {
   font-size:
-    clamp(22px, 2.1vw, 30px);
+    clamp(22px, 2.2vw, 30px);
 }
 
 
 p {
   max-width: 720px;
-
-  margin-bottom: 1.2em;
 }
 
 
 .lead {
   font-size:
-    clamp(20px, 1.9vw, 26px);
+    clamp(20px, 2vw, 27px);
 
-  line-height: 1.58;
+  line-height: 1.55;
 }
 
 
@@ -272,36 +267,39 @@ p {
 
 .section,
 .hero {
-  padding-left: var(--page-padding);
+  padding-left:
+    var(--page-padding);
 
-  padding-right: var(--page-padding);
+  padding-right:
+    var(--page-padding);
 }
 
 
 .section {
   position: relative;
 
-  padding-top: var(--section-padding);
+  padding-top:
+    var(--section-padding);
 
-  padding-bottom: var(--section-padding);
+  padding-bottom:
+    var(--section-padding);
 }
 
 
 .section > *,
 .hero > * {
-  width: min(
-    100%,
-    var(--page-width)
-  );
+  width:
+    min(100%, var(--page-width));
 
   margin-left: auto;
-
   margin-right: auto;
 }
 
 
 /* =========================================================
    06 — HEADER
+   ---------------------------------------------------------
+   Burgundy institutional navigation
    ========================================================= */
 
 .site-header {
@@ -313,7 +311,7 @@ p {
 
   width: 100%;
 
-  min-height: 70px;
+  min-height: 72px;
 
   display: flex;
 
@@ -325,33 +323,46 @@ p {
     0 var(--page-padding);
 
   background:
-    rgba(111, 16, 32, 0.98);
+    rgba(111, 16, 36, 0.98);
 
   color: var(--paper);
 
   border-bottom:
     1px solid
-    rgba(245, 241, 232, 0.18);
+    rgba(255, 255, 255, 0.16);
 
-  box-shadow:
-    0 1px 0 rgba(0, 0, 0, 0.08);
+  transition:
+    min-height 220ms var(--ease),
+    box-shadow 220ms var(--ease);
 }
 
 
-.main-navigation {
-  width: min(
-    100%,
-    var(--page-width)
-  );
+.site-header.is-scrolled {
+  min-height: 64px;
+
+  box-shadow:
+    0 5px 24px
+    rgba(0, 0, 0, 0.10);
+}
+
+
+/* ---------------------------------------------------------
+   Navigation
+   --------------------------------------------------------- */
+
+.main-navigation,
+.nav-links {
+  width:
+    min(100%, var(--page-width));
 
   display: flex;
 
   align-items: center;
 
-  justify-content: center;
+  justify-content: flex-end;
 
   gap:
-    clamp(25px, 3.5vw, 56px);
+    clamp(24px, 3.4vw, 54px);
 }
 
 
@@ -362,17 +373,17 @@ p {
     22px 0 20px;
 
   color:
-    rgba(245, 241, 232, 0.72);
+    rgba(245, 241, 232, 0.76);
 
   font-family: var(--sans);
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 600;
 
-  letter-spacing: 0.075em;
+  letter-spacing: 0.045em;
 
-  text-transform: uppercase;
+  white-space: nowrap;
 
   transition:
     color 180ms var(--ease);
@@ -385,7 +396,6 @@ p {
   position: absolute;
 
   left: 0;
-
   right: 100%;
 
   bottom: 12px;
@@ -401,7 +411,7 @@ p {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--paper);
+  color: var(--white);
 }
 
 
@@ -411,22 +421,39 @@ p {
 }
 
 
+/* ---------------------------------------------------------
+   Mobile menu toggle
+   --------------------------------------------------------- */
+
+.menu-toggle {
+  display: none;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--paper);
+
+  cursor: pointer;
+}
+
+
 /* =========================================================
    07 — HERO
    ---------------------------------------------------------
-   Primary institutional introduction
+   Paper / Ivory
    ========================================================= */
 
 .hero {
   background: var(--paper);
 
-  color: var(--ink);
+  color: var(--black);
 
   padding-top:
-    clamp(68px, 8vw, 112px);
+    clamp(70px, 8vw, 115px);
 
   padding-bottom:
-    clamp(58px, 7vw, 92px);
+    clamp(55px, 6vw, 85px);
 }
 
 
@@ -434,7 +461,7 @@ p {
   position: relative;
 
   min-height:
-    clamp(440px, 46vw, 630px);
+    clamp(460px, 48vw, 660px);
 
   display: grid;
 
@@ -445,26 +472,24 @@ p {
   align-items: center;
 
   gap:
-    clamp(45px, 8vw, 125px);
+    clamp(45px, 8vw, 130px);
 
   padding:
-    clamp(30px, 4vw, 60px) 0;
-
-  border-bottom:
-    1px solid
-    var(--line-dark);
+    clamp(35px, 5vw, 70px) 0;
 }
 
 
-/* =========================================================
-   HERO LOGO
-   ========================================================= */
+/* ---------------------------------------------------------
+   Hero logo
+   --------------------------------------------------------- */
 
 .hero-logo {
   width:
-    clamp(170px, 19vw, 250px);
+    clamp(170px, 20vw, 260px);
 
   aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
 
   overflow: hidden;
 
@@ -475,19 +500,11 @@ p {
   justify-content: center;
 
   flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background: var(--white);
-
-  box-shadow:
-    0 0 0 1px rgba(32, 32, 32, 0.12);
 }
 
 
 .hero-logo img {
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
@@ -496,12 +513,12 @@ p {
 }
 
 
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
+/* ---------------------------------------------------------
+   Hero content
+   --------------------------------------------------------- */
 
 .hero-content {
-  max-width: 950px;
+  max-width: 940px;
 }
 
 
@@ -512,23 +529,23 @@ p {
 
   font-family: var(--sans);
 
-  font-size: 12px;
+  font-size: 13px;
 
   font-weight: 700;
 
-  letter-spacing: 0.18em;
-
-  line-height: 1.4;
+  letter-spacing: 0.19em;
 
   text-transform: uppercase;
 }
 
 
 .hero-content h1 {
-  max-width: 960px;
-
   margin-bottom:
-    clamp(25px, 3vw, 36px);
+    clamp(26px, 3vw, 38px);
+
+  max-width: 950px;
+
+  color: var(--black);
 }
 
 
@@ -538,18 +555,18 @@ p {
   margin-bottom: 0;
 
   color:
-    var(--ink-soft);
+    rgba(25, 25, 25, 0.72);
 
   font-size:
-    clamp(18px, 1.65vw, 22px);
+    clamp(18px, 1.7vw, 23px);
 
   line-height: 1.65;
 }
 
 
-/* =========================================================
-   HERO FIELDS
-   ========================================================= */
+/* ---------------------------------------------------------
+   Hero fields
+   --------------------------------------------------------- */
 
 .hero-fields {
   display: flex;
@@ -560,9 +577,7 @@ p {
 
   gap: 0;
 
-  margin-top: 32px;
-
-  padding-top: 22px;
+  padding-top: 25px;
 
   border-top:
     1px solid
@@ -579,11 +594,11 @@ p {
 
   font-family: var(--sans);
 
-  font-size: 12px;
+  font-size: 13px;
 
   font-weight: 700;
 
-  letter-spacing: 0.07em;
+  letter-spacing: 0.065em;
 
   text-transform: uppercase;
 }
@@ -593,11 +608,11 @@ p {
   content: "·";
 
   margin:
-    0 15px;
+    0 16px;
 
   color: var(--brass);
 
-  font-size: 16px;
+  font-size: 17px;
 }
 
 
@@ -606,36 +621,36 @@ p {
    ========================================================= */
 
 .section-label {
-  margin-bottom: 43px;
+  margin-bottom: 48px;
 
   color: currentColor;
 
   font-family: var(--sans);
 
-  font-size: 11px;
+  font-size: 12px;
 
   font-weight: 700;
 
-  letter-spacing: 0.17em;
+  letter-spacing: 0.16em;
 
   line-height: 1.4;
 
   text-transform: uppercase;
 
-  opacity: 0.68;
+  opacity: 0.70;
 }
 
 
 /* =========================================================
    09 — ABOUT
    ---------------------------------------------------------
-   Warm institutional paper
+   Paper / Ivory
    ========================================================= */
 
 .section-about {
-  background: var(--paper-light);
+  background: var(--paper);
 
-  color: var(--ink);
+  color: var(--black);
 }
 
 
@@ -656,9 +671,9 @@ p {
 .section-statement h2 {
   max-width: 850px;
 
-  color: var(--burgundy);
-
   margin-bottom: 0;
+
+  color: var(--black);
 }
 
 
@@ -668,17 +683,20 @@ p {
 
 
 .section-copy p {
-  color: var(--ink-soft);
+  color:
+    rgba(25, 25, 25, 0.70);
 }
 
 
 .section-copy .lead {
-  color: var(--ink);
+  color: var(--black);
 }
 
 
 /* =========================================================
    10 — EDITORIAL LINKS
+   ---------------------------------------------------------
+   No boxes / no pills
    ========================================================= */
 
 .editorial-link {
@@ -688,24 +706,22 @@ p {
 
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
-  margin-top: 27px;
+  margin-top: 28px;
 
   padding:
-    5px 0 7px;
+    5px 0 8px;
 
   color: currentColor;
 
   font-family: var(--sans);
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 
-  letter-spacing: 0.045em;
-
-  text-transform: uppercase;
+  letter-spacing: 0.035em;
 
   border-bottom:
     1px solid
@@ -718,22 +734,22 @@ p {
 
 
 .editorial-link:hover {
-  gap: 18px;
+  gap: 19px;
 
-  opacity: 0.65;
+  opacity: 0.72;
 }
 
 
 /* =========================================================
    11 — PURPOSE
    ---------------------------------------------------------
-   Deep institutional burgundy
+   Burgundy
    ========================================================= */
 
 .section-purpose {
   background: var(--burgundy);
 
-  color: var(--paper);
+  color: var(--white);
 }
 
 
@@ -754,15 +770,15 @@ p {
 .purpose-layout h2 {
   max-width: 900px;
 
-  color: var(--paper);
-
   margin-bottom: 0;
+
+  color: var(--white);
 }
 
 
 .purpose-copy {
   color:
-    rgba(245, 241, 232, 0.76);
+    rgba(255, 255, 255, 0.72);
 }
 
 
@@ -774,13 +790,13 @@ p {
 /* =========================================================
    12 — WORK
    ---------------------------------------------------------
-   Navy institutional field
+   Paper / Ivory
    ========================================================= */
 
 .section-work {
-  background: var(--navy);
+  background: var(--paper);
 
-  color: var(--paper);
+  color: var(--black);
 }
 
 
@@ -788,21 +804,25 @@ p {
   max-width: 920px;
 
   margin-bottom:
-    clamp(62px, 8vw, 100px);
+    clamp(65px, 8vw, 105px);
 }
 
 
 .work-introduction h2 {
-  color: var(--paper);
-
   margin-bottom: 0;
+
+  color: var(--black);
 }
 
+
+/* ---------------------------------------------------------
+   Work rows
+   --------------------------------------------------------- */
 
 .work-list {
   border-top:
     1px solid
-    var(--line-light);
+    var(--line-dark);
 }
 
 
@@ -820,31 +840,31 @@ p {
   align-items: center;
 
   padding:
-    32px 0 36px;
+    34px 0 38px;
 
   border-bottom:
     1px solid
-    var(--line-light);
+    var(--line-dark);
 }
 
 
 .work-number {
-  color: var(--brass);
+  color: var(--burgundy);
 
   font-family: var(--sans);
 
-  font-size: 12px;
+  font-size: 13px;
 
   font-weight: 700;
 
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 
 .work-content h3 {
   margin-bottom: 9px;
 
-  color: var(--paper);
+  color: var(--black);
 }
 
 
@@ -854,7 +874,7 @@ p {
   margin-bottom: 0;
 
   color:
-    rgba(245, 241, 232, 0.64);
+    rgba(25, 25, 25, 0.64);
 
   font-size: 16px;
 }
@@ -863,22 +883,22 @@ p {
 .work-row .editorial-link {
   margin-top: 0;
 
-  color: var(--paper);
-
   white-space: nowrap;
+
+  color: var(--burgundy);
 }
 
 
 /* =========================================================
    13 — ECOSYSTEM
    ---------------------------------------------------------
-   White / archive-like institutional section
+   White
    ========================================================= */
 
 .section-ecosystem {
   background: var(--white);
 
-  color: var(--ink);
+  color: var(--black);
 }
 
 
@@ -895,7 +915,7 @@ p {
   align-items: end;
 
   margin-bottom:
-    clamp(62px, 8vw, 105px);
+    clamp(65px, 8vw, 105px);
 }
 
 
@@ -916,13 +936,14 @@ p {
 .ecosystem-heading p {
   margin-bottom: 0;
 
-  color: var(--muted);
+  color:
+    rgba(25, 25, 25, 0.66);
 }
 
 
-/* =========================================================
-   ECOSYSTEM RELATIONSHIP
-   ========================================================= */
+/* ---------------------------------------------------------
+   Ecosystem relationship
+   --------------------------------------------------------- */
 
 .ecosystem-line {
   display: grid;
@@ -955,17 +976,18 @@ p {
 .ecosystem-unit > span {
   display: block;
 
-  margin-bottom: 22px;
+  margin-bottom: 23px;
 
-  color: var(--muted);
+  color:
+    rgba(25, 25, 25, 0.48);
 
   font-family: var(--sans);
 
-  font-size: 10px;
+  font-size: 11px;
 
   font-weight: 700;
 
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
 
   text-transform: uppercase;
 }
@@ -977,14 +999,15 @@ p {
   color: var(--burgundy);
 
   font-size:
-    clamp(29px, 3.8vw, 50px);
+    clamp(30px, 4vw, 52px);
 }
 
 
 .ecosystem-unit p {
   margin-bottom: 0;
 
-  color: var(--muted);
+  color:
+    rgba(25, 25, 25, 0.62);
 
   font-size: 15px;
 }
@@ -996,7 +1019,7 @@ p {
   height: 1px;
 
   background:
-    var(--line-dark-strong);
+    rgba(25, 25, 25, 0.25);
 }
 
 
@@ -1016,7 +1039,7 @@ p {
 
   background: var(--white);
 
-  color: var(--brass-dark);
+  color: var(--brass);
 
   font-size: 16px;
 }
@@ -1026,12 +1049,18 @@ p {
    14 — PUBLICATION
    ---------------------------------------------------------
    Burgundy archive / institutional records
+
+   IMPORTANT:
+   Burgundy background
+   White primary text
+   Muted white secondary text
+   Brass action
    ========================================================= */
 
 .section-publication {
   background: var(--burgundy-dark);
 
-  color: var(--paper);
+  color: var(--white);
 }
 
 
@@ -1050,8 +1079,7 @@ p {
 
 
 /* ---------------------------------------------------------
-   Publication entries
-   Open institutional rows
+   Publication entry
    --------------------------------------------------------- */
 
 .publication-list a {
@@ -1062,28 +1090,26 @@ p {
     minmax(0, 1fr)
     auto;
 
-  gap:
-    30px;
+  gap: 30px;
 
   align-items: center;
 
   padding:
     24px 0 27px;
 
-  color: var(--paper);
+  color: var(--white);
 
   border-bottom:
     1px solid
     var(--line-light);
 
   transition:
-    padding-left 220ms var(--ease),
-    background-color 180ms var(--ease);
+    padding-left 220ms var(--ease);
 }
 
 
 /* ---------------------------------------------------------
-   Hover
+   Publication hover
    --------------------------------------------------------- */
 
 .publication-list a:hover {
@@ -1093,7 +1119,6 @@ p {
 
 /* ---------------------------------------------------------
    Publication title
-   Primary text — white
    --------------------------------------------------------- */
 
 .publication-list strong {
@@ -1113,7 +1138,6 @@ p {
 
 /* ---------------------------------------------------------
    Publication description
-   Secondary text — restrained white
    --------------------------------------------------------- */
 
 .publication-list span:nth-child(2) {
@@ -1130,7 +1154,6 @@ p {
 
 /* ---------------------------------------------------------
    Publication action
-   Brass institutional accent
    --------------------------------------------------------- */
 
 .publication-list span:last-child {
@@ -1147,10 +1170,6 @@ p {
 }
 
 
-/* ---------------------------------------------------------
-   Action movement
-   --------------------------------------------------------- */
-
 .publication-list a:hover span:last-child {
   transform:
     translateX(4px);
@@ -1158,10 +1177,847 @@ p {
 
 
 /* =========================================================
-   MOBILE
+   15 — PARTICIPATE
+   ---------------------------------------------------------
+   Burgundy
+   ========================================================= */
+
+.section-participate {
+  background: var(--burgundy);
+
+  color: var(--white);
+}
+
+
+.participate-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(280px, 0.48fr);
+
+  gap:
+    clamp(50px, 9vw, 140px);
+
+  align-items: end;
+
+  margin-bottom:
+    clamp(65px, 8vw, 100px);
+}
+
+
+.participate-heading h2 {
+  max-width: 850px;
+
+  margin-bottom: 0;
+
+  color: var(--white);
+}
+
+
+.participate-heading p {
+  margin-bottom: 0;
+
+  color:
+    rgba(255, 255, 255, 0.70);
+}
+
+
+/* ---------------------------------------------------------
+   Participation list
+   --------------------------------------------------------- */
+
+.participation-list {
+  border-top:
+    1px solid
+    var(--line-light);
+}
+
+
+.participation-list a {
+  display: grid;
+
+  grid-template-columns:
+    55px
+    minmax(150px, 0.38fr)
+    minmax(0, 1fr)
+    auto;
+
+  gap: 30px;
+
+  align-items: center;
+
+  padding:
+    25px 0;
+
+  color: var(--white);
+
+  border-bottom:
+    1px solid
+    var(--line-light);
+
+  transition:
+    padding-left 220ms var(--ease);
+}
+
+
+.participation-list a:hover {
+  padding-left: 10px;
+}
+
+
+.participation-list a > span:first-child {
+  color: var(--brass);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.participation-list a > span:nth-child(2) {
+  color: var(--white);
+
+  font-family: var(--serif);
+
+  font-size: 21px;
+}
+
+
+.participation-list small {
+  color:
+    rgba(255, 255, 255, 0.66);
+
+  font-size: 15px;
+}
+
+
+.participation-list b {
+  color: var(--brass);
+
+  font-size: 18px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   16 — CONNECT
+   ---------------------------------------------------------
+   Paper / Ivory
+   ========================================================= */
+
+.section-connect {
+  background: var(--paper);
+
+  color: var(--black);
+}
+
+
+.connect-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(290px, 0.48fr);
+
+  gap:
+    clamp(50px, 9vw, 140px);
+
+  align-items: end;
+
+  margin-bottom:
+    clamp(65px, 8vw, 100px);
+}
+
+
+.connect-heading h2 {
+  max-width: 850px;
+
+  margin-bottom: 0;
+
+  color: var(--black);
+}
+
+
+.connect-heading p {
+  margin-bottom: 0;
+
+  color:
+    rgba(25, 25, 25, 0.66);
+}
+
+
+/* ---------------------------------------------------------
+   Connect directory
+   --------------------------------------------------------- */
+
+.connect-directory {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap:
+    clamp(45px, 8vw, 120px);
+
+  border-top:
+    1px solid
+    var(--line-dark);
+}
+
+
+.connect-entry {
+  padding:
+    34px 0 37px;
+
+  border-bottom:
+    1px solid
+    var(--line-dark);
+}
+
+
+/* ---------------------------------------------------------
+   Connect heading
+   --------------------------------------------------------- */
+
+.connect-entry-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  margin-bottom: 22px;
+}
+
+
+.connect-entry-title h3 {
+  margin: 0;
+
+  color: var(--black);
+
+  font-size:
+    clamp(22px, 2vw, 29px);
+}
+
+
+.connect-entry-title small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color:
+    rgba(25, 25, 25, 0.48);
+
+  font-family: var(--sans);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Institutional icons
+   --------------------------------------------------------- */
+
+.connect-symbol {
+  width: 43px;
+  height: 43px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    rgba(184, 154, 82, 0.80);
+
+  border-radius: 50%;
+
+  color: var(--brass);
+}
+
+
+.connect-symbol svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ---------------------------------------------------------
+   Connect links
+   --------------------------------------------------------- */
+
+.connect-entry-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap:
+    7px 27px;
+}
+
+
+.connect-entry-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  width: fit-content;
+
+  padding:
+    3px 0 6px;
+
+  color:
+    rgba(25, 25, 25, 0.70);
+
+  border-bottom:
+    1px solid
+    rgba(25, 25, 25, 0.25);
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    color 180ms var(--ease),
+    border-color 180ms var(--ease);
+}
+
+
+.connect-entry-link svg {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+}
+
+
+.connect-entry-link span:last-child {
+  color: var(--brass);
+
+  border: 0;
+
+  transition:
+    transform 180ms var(--ease);
+}
+
+
+.connect-entry-link:hover {
+  color: var(--burgundy);
+
+  border-color: var(--brass);
+}
+
+
+.connect-entry-link:hover span:last-child {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   17 — FOOTER
+   ---------------------------------------------------------
+   Royal Navy
+   ========================================================= */
+
+.site-footer {
+  background: var(--navy);
+
+  color: var(--paper);
+
+  padding:
+    75px var(--page-padding) 28px;
+}
+
+
+.footer-main {
+  width:
+    min(100%, var(--page-width));
+
+  margin:
+    0 auto 80px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr
+    0.75fr
+    1fr
+    1fr;
+
+  gap:
+    clamp(35px, 6vw, 100px);
+}
+
+
+/* ---------------------------------------------------------
+   Footer brand
+   --------------------------------------------------------- */
+
+.footer-brand img {
+  width: 78px;
+  height: 78px;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+
+.footer-brand p {
+  max-width: 240px;
+
+  margin-top: 20px;
+
+  color:
+    rgba(245, 241, 232, 0.58);
+
+  font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   Footer columns
+   --------------------------------------------------------- */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+
+.footer-heading {
+  margin-bottom: 13px;
+
+  color: var(--brass);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+
+.footer-column a {
+  color:
+    rgba(245, 241, 232, 0.63);
+
+  font-size: 14px;
+
+  transition:
+    color 180ms var(--ease);
+}
+
+
+.footer-column a:hover {
+  color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   Footer bottom
+   --------------------------------------------------------- */
+
+.footer-bottom {
+  width:
+    min(100%, var(--page-width));
+
+  margin: 0 auto;
+
+  padding-top: 23px;
+
+  border-top:
+    1px solid
+    rgba(245, 241, 232, 0.16);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color:
+    rgba(245, 241, 232, 0.42);
+
+  font-size: 11px;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   18 — REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(18px);
+
+  transition:
+    opacity 650ms var(--ease),
+    transform 650ms var(--ease);
+}
+
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   19 — TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  /* -------------------------------------------------------
+     Header
+     ------------------------------------------------------- */
+
+  .main-navigation,
+  .nav-links {
+    gap: 24px;
+  }
+
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
+
+  .hero-banner {
+    grid-template-columns:
+      150px
+      minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+
+  /* -------------------------------------------------------
+     Two-column sections
+     ------------------------------------------------------- */
+
+  .two-column,
+  .purpose-layout,
+  .ecosystem-heading,
+  .participate-heading,
+  .connect-heading {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  /* -------------------------------------------------------
+     Ecosystem
+     ------------------------------------------------------- */
+
+  .ecosystem-line {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ecosystem-connector {
+    width: 100%;
+
+    margin:
+      10px 0 25px;
+  }
+
+
+  .ecosystem-connector::after {
+    content: "↓";
+
+    right: 0;
+
+    top: -8px;
+
+    transform: none;
+
+    padding-left: 0;
+
+    background: transparent;
+  }
+
+
+  /* -------------------------------------------------------
+     Footer
+     ------------------------------------------------------- */
+
+  .footer-main {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   20 — MOBILE
    ========================================================= */
 
 @media (max-width: 760px) {
+
+  /* -------------------------------------------------------
+     Header
+     ------------------------------------------------------- */
+
+  .site-header {
+    min-height: 64px;
+
+    justify-content: flex-start;
+
+    padding:
+      0 var(--page-padding);
+  }
+
+
+  .main-navigation {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 20px;
+  }
+
+
+  .nav-links {
+    position: fixed;
+
+    top: 64px;
+
+    left: 0;
+
+    right: 0;
+
+    width: 100%;
+
+    height:
+      calc(100vh - 64px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 0;
+
+    padding:
+      25px var(--page-padding) 40px;
+
+    background: var(--burgundy-dark);
+
+    overflow-y: auto;
+
+    transform:
+      translateY(-12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      opacity 180ms var(--ease),
+      transform 180ms var(--ease),
+      visibility 180ms var(--ease);
+  }
+
+
+  .nav-links.open {
+    transform:
+      translateY(0);
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+
+  .nav-link {
+    width: 100%;
+
+    padding:
+      18px 0;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.13);
+
+    font-size: 14px;
+  }
+
+
+  .nav-link::after {
+    display: none;
+  }
+
+
+  .menu-toggle {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    margin-left: auto;
+  }
+
+
+  /* -------------------------------------------------------
+     Hero
+     ------------------------------------------------------- */
+
+  .hero {
+    padding-top: 48px;
+
+    padding-bottom: 45px;
+  }
+
+
+  .hero-banner {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 35px;
+
+    padding:
+      15px 0 50px;
+  }
+
+
+  .hero-logo {
+    width: 145px;
+
+    height: 145px;
+  }
+
+
+  .hero-content h1 {
+    font-size:
+      clamp(43px, 12vw, 68px);
+
+    line-height: 1.08;
+  }
+
+
+  .hero-description {
+    font-size: 17px;
+
+    line-height: 1.62;
+  }
+
+
+  .hero-fields {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding-top: 20px;
+  }
+
+
+  .hero-fields span:not(:last-child)::after {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     Sections
+     ------------------------------------------------------- */
+
+  .section {
+    padding-top: 78px;
+
+    padding-bottom: 78px;
+  }
+
+
+  .section-label {
+    margin-bottom: 34px;
+  }
+
+
+  /* -------------------------------------------------------
+     Work
+     ------------------------------------------------------- */
+
+  .work-row {
+    grid-template-columns:
+      35px
+      minmax(0, 1fr);
+
+    gap: 18px;
+
+    align-items: start;
+  }
+
+
+  .work-row .editorial-link {
+    grid-column: 2;
+
+    margin-top: 2px;
+  }
+
+
+  .work-content p {
+    font-size: 15px;
+  }
+
+
+  /* -------------------------------------------------------
+     Publication
+     ------------------------------------------------------- */
 
   .publication-list a {
     grid-template-columns:
@@ -1208,799 +2064,6 @@ p {
     padding-left: 0;
   }
 
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-  .publication-list a {
-    gap:
-      8px 14px;
-  }
-
-
-  .publication-list strong {
-    font-size: 18px;
-  }
-
-
-  .publication-list a span:nth-child(2) {
-    font-size: 14px;
-  }
-
-
-  .publication-list span:last-child {
-    font-size: 16px;
-  }
-
-}
-
-/* =========================================================
-   15 — PARTICIPATE
-   ---------------------------------------------------------
-   Paper / open institutional invitation
-   ========================================================= */
-
-.section-participate {
-  background: var(--paper);
-
-  color: var(--ink);
-}
-
-
-.participate-heading {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(280px, 0.48fr);
-
-  gap:
-    clamp(50px, 9vw, 140px);
-
-  align-items: end;
-
-  margin-bottom:
-    clamp(62px, 8vw, 100px);
-}
-
-
-.participate-heading h2 {
-  max-width: 850px;
-
-  margin-bottom: 0;
-
-  color: var(--burgundy);
-}
-
-
-.participate-heading p {
-  margin-bottom: 0;
-
-  color: var(--muted);
-}
-
-
-/* =========================================================
-   PARTICIPATION LIST
-   ========================================================= */
-
-.participation-list {
-  border-top:
-    1px solid
-    var(--line-dark);
-}
-
-
-.participation-list a {
-  display: grid;
-
-  grid-template-columns:
-    55px
-    minmax(150px, 0.38fr)
-    minmax(0, 1fr)
-    auto;
-
-  gap: 30px;
-
-  align-items: center;
-
-  padding:
-    24px 0;
-
-  border-bottom:
-    1px solid
-    var(--line-dark);
-
-  transition:
-    padding-left 220ms var(--ease);
-}
-
-
-.participation-list a:hover {
-  padding-left: 10px;
-}
-
-
-.participation-list a > span:first-child {
-  color: var(--burgundy);
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.05em;
-}
-
-
-.participation-list a > span:nth-child(2) {
-  color: var(--ink);
-
-  font-family: var(--serif);
-
-  font-size: 21px;
-}
-
-
-.participation-list small {
-  color: var(--muted);
-
-  font-size: 15px;
-}
-
-
-.participation-list b {
-  color: var(--burgundy);
-
-  font-size: 18px;
-
-  font-weight: 400;
-}
-
-
-/* =========================================================
-   16 — CONNECT
-   ---------------------------------------------------------
-   Navy directory
-   ========================================================= */
-
-.section-connect {
-  background: var(--navy);
-
-  color: var(--paper);
-}
-
-
-.connect-heading {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(290px, 0.48fr);
-
-  gap:
-    clamp(50px, 9vw, 140px);
-
-  align-items: end;
-
-  margin-bottom:
-    clamp(62px, 8vw, 100px);
-}
-
-
-.connect-heading h2 {
-  max-width: 850px;
-
-  margin-bottom: 0;
-
-  color: var(--paper);
-}
-
-
-.connect-heading p {
-  margin-bottom: 0;
-
-  color:
-    rgba(245, 241, 232, 0.63);
-}
-
-
-/* =========================================================
-   CONNECT DIRECTORY
-   ========================================================= */
-
-.connect-directory {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  column-gap:
-    clamp(45px, 8vw, 120px);
-
-  border-top:
-    1px solid
-    var(--line-light);
-}
-
-
-.connect-entry {
-  padding:
-    32px 0 35px;
-
-  border-bottom:
-    1px solid
-    var(--line-light);
-}
-
-
-/* =========================================================
-   CONNECT HEADING
-   ========================================================= */
-
-.connect-entry-title {
-  display: flex;
-
-  align-items: center;
-
-  gap: 16px;
-
-  margin-bottom: 21px;
-}
-
-
-.connect-entry-title h3 {
-  margin: 0;
-
-  color: var(--paper);
-
-  font-size:
-    clamp(22px, 2vw, 28px);
-}
-
-
-.connect-entry-title small {
-  display: block;
-
-  margin-bottom: 4px;
-
-  color:
-    rgba(245, 241, 232, 0.43);
-
-  font-family: var(--sans);
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.11em;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================================
-   CONNECT SYMBOLS
-   ========================================================= */
-
-.connect-symbol {
-  width: 43px;
-
-  height: 43px;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border:
-    1px solid
-    rgba(181, 150, 82, 0.68);
-
-  border-radius: 50%;
-
-  color: var(--brass);
-}
-
-
-.connect-symbol svg {
-  width: 19px;
-
-  height: 19px;
-}
-
-
-/* =========================================================
-   CONNECT LINKS
-   ========================================================= */
-
-.connect-entry-links {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap:
-    7px 26px;
-}
-
-
-.connect-entry-link {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  width: fit-content;
-
-  padding:
-    3px 0 6px;
-
-  color:
-    rgba(245, 241, 232, 0.68);
-
-  border-bottom:
-    1px solid
-    rgba(245, 241, 232, 0.24);
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition:
-    color 180ms var(--ease),
-    border-color 180ms var(--ease);
-}
-
-
-.connect-entry-link svg {
-  width: 17px;
-
-  height: 17px;
-
-  flex-shrink: 0;
-}
-
-
-.connect-entry-link span:last-child {
-  color: var(--brass);
-
-  border: 0;
-
-  transition:
-    transform 180ms var(--ease);
-}
-
-
-.connect-entry-link:hover {
-  color: var(--paper);
-
-  border-color: var(--brass);
-}
-
-
-.connect-entry-link:hover span:last-child {
-  transform:
-    translateX(4px);
-}
-
-
-/* =========================================================
-   17 — FOOTER
-   ---------------------------------------------------------
-   Formal navy institutional footer
-   ========================================================= */
-
-.site-footer {
-  background: var(--navy-deep);
-
-  color: var(--paper);
-
-  padding:
-    72px var(--page-padding) 28px;
-}
-
-
-.footer-main {
-  width: min(
-    100%,
-    var(--page-width)
-  );
-
-  margin:
-    0 auto 76px;
-
-  display: grid;
-
-  grid-template-columns:
-    1.3fr
-    0.75fr
-    1fr
-    1fr;
-
-  gap:
-    clamp(35px, 6vw, 100px);
-}
-
-
-/* =========================================================
-   FOOTER BRAND
-   ========================================================= */
-
-.footer-brand img {
-  width: 76px;
-
-  height: 76px;
-
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-}
-
-
-.footer-brand p {
-  max-width: 240px;
-
-  margin-top: 19px;
-
-  color:
-    rgba(245, 241, 232, 0.53);
-
-  font-size: 13px;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   FOOTER COLUMNS
-   ========================================================= */
-
-.footer-column {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  gap: 8px;
-}
-
-
-.footer-heading {
-  margin-bottom: 12px;
-
-  color: var(--brass);
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-
-  text-transform: uppercase;
-}
-
-
-.footer-column a {
-  color:
-    rgba(245, 241, 232, 0.59);
-
-  font-size: 14px;
-
-  transition:
-    color 180ms var(--ease);
-}
-
-
-.footer-column a:hover {
-  color: var(--paper);
-}
-
-
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
-
-.footer-bottom {
-  width: min(
-    100%,
-    var(--page-width)
-  );
-
-  margin: 0 auto;
-
-  padding-top: 22px;
-
-  border-top:
-    1px solid
-    rgba(245, 241, 232, 0.14);
-
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 20px;
-
-  color:
-    rgba(245, 241, 232, 0.38);
-
-  font-size: 11px;
-
-  letter-spacing: 0.035em;
-}
-
-
-/* =========================================================
-   18 — TABLET
-   ========================================================= */
-
-@media (max-width: 980px) {
-
-  /* Header */
-
-  .main-navigation {
-    gap: 24px;
-  }
-
-
-  .nav-link {
-    font-size: 12px;
-  }
-
-
-  /* Hero */
-
-  .hero-banner {
-    grid-template-columns:
-      150px
-      minmax(0, 1fr);
-
-    gap: 44px;
-  }
-
-
-  /* Two-column structures */
-
-  .two-column,
-  .purpose-layout,
-  .ecosystem-heading,
-  .participate-heading,
-  .connect-heading {
-    grid-template-columns: 1fr;
-
-    gap: 34px;
-  }
-
-
-  /* Ecosystem */
-
-  .ecosystem-line {
-    grid-template-columns: 1fr;
-  }
-
-
-  .ecosystem-connector {
-    width: 100%;
-
-    margin:
-      10px 0 25px;
-  }
-
-
-  .ecosystem-connector::after {
-    content: "↓";
-
-    right: 0;
-
-    top: -8px;
-
-    transform: none;
-
-    background: var(--white);
-  }
-
-
-  /* Footer */
-
-  .footer-main {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-
-/* =========================================================
-   19 — MOBILE
-   ========================================================= */
-
-@media (max-width: 760px) {
-
-  /* -------------------------------------------------------
-     Header
-     ------------------------------------------------------- */
-
-  .site-header {
-    justify-content: flex-start;
-
-    min-height: 62px;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-  }
-
-
-  .site-header::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  .main-navigation {
-    width: max-content;
-
-    justify-content: flex-start;
-
-    gap: 22px;
-  }
-
-
-  .nav-link {
-    padding:
-      18px 0 16px;
-
-    font-size: 11px;
-
-    letter-spacing: 0.07em;
-
-    white-space: nowrap;
-  }
-
-
-  /* -------------------------------------------------------
-     Hero
-     ------------------------------------------------------- */
-
-  .hero {
-    padding-top: 45px;
-
-    padding-bottom: 40px;
-  }
-
-
-  .hero-banner {
-    min-height: auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 32px;
-
-    padding:
-      12px 0 48px;
-  }
-
-
-  .hero-logo {
-    width: 142px;
-
-    height: 142px;
-  }
-
-
-  .hero-content h1 {
-    font-size:
-      clamp(42px, 11.5vw, 65px);
-
-    line-height: 1.07;
-  }
-
-
-  .hero-description {
-    font-size: 17px;
-
-    line-height: 1.63;
-  }
-
-
-  .hero-fields {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 5px;
-
-    margin-top: 26px;
-
-    padding-top: 19px;
-  }
-
-
-  .hero-fields span:not(:last-child)::after {
-    display: none;
-  }
-
-
-  /* -------------------------------------------------------
-     Sections
-     ------------------------------------------------------- */
-
-  .section {
-    padding-top: 75px;
-
-    padding-bottom: 75px;
-  }
-
-
-  .section-label {
-    margin-bottom: 31px;
-  }
-
-
-  /* -------------------------------------------------------
-     Work
-     ------------------------------------------------------- */
-
-  .work-row {
-    grid-template-columns:
-      35px
-      minmax(0, 1fr);
-
-    gap: 18px;
-
-    align-items: start;
-
-    padding:
-      27px 0 30px;
-  }
-
-
-  .work-row .editorial-link {
-    grid-column: 2;
-
-    margin-top: 2px;
-  }
-
-
-  .work-content p {
-    font-size: 15px;
-  }
-
-
-  /* -------------------------------------------------------
-     Publication
-     ------------------------------------------------------- */
-
-  .publication-list a {
-    grid-template-columns:
-      1fr auto;
-
-    gap: 9px;
-
-    padding:
-      22px 0 24px;
-  }
-
-
-  .publication-list a span:nth-child(2) {
-    grid-column: 1 / -1;
-
-    order: 3;
-  }
-
 
   /* -------------------------------------------------------
      Participation
@@ -2012,17 +2075,15 @@ p {
       minmax(0, 1fr)
       auto;
 
-    gap: 14px;
+    gap: 15px;
 
     align-items: start;
-
-    padding:
-      22px 0;
   }
 
 
   .participation-list small {
-    grid-column: 2 / -1;
+    grid-column:
+      2 / -1;
   }
 
 
@@ -2032,6 +2093,11 @@ p {
     grid-row: 1;
 
     margin-top: 2px;
+  }
+
+
+  .participation-list a:hover {
+    padding-left: 0;
   }
 
 
@@ -2047,13 +2113,13 @@ p {
 
 
   .connect-heading {
-    gap: 26px;
+    gap: 28px;
   }
 
 
   .connect-entry {
     padding:
-      28px 0 31px;
+      30px 0 32px;
   }
 
 
@@ -2062,23 +2128,23 @@ p {
      ------------------------------------------------------- */
 
   .site-footer {
-    padding-top: 57px;
+    padding-top: 60px;
   }
 
 
   .footer-main {
     grid-template-columns: 1fr;
 
-    gap: 42px;
+    gap: 45px;
 
-    margin-bottom: 52px;
+    margin-bottom: 55px;
   }
 
 
   .footer-brand img {
-    width: 67px;
+    width: 68px;
 
-    height: 67px;
+    height: 68px;
   }
 
 
@@ -2092,45 +2158,40 @@ p {
 
 
 /* =========================================================
-   20 — SMALL MOBILE
+   21 — SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
 
-  .main-navigation {
-    gap: 18px;
-  }
-
-
-  .nav-link {
-    font-size: 10px;
-  }
-
-
   .hero-logo {
-    width: 122px;
+    width: 125px;
 
-    height: 122px;
+    height: 125px;
   }
 
 
   .hero-content h1 {
-    font-size: 42px;
+    font-size: 43px;
   }
 
 
   .section h2 {
-    font-size: 39px;
+    font-size: 40px;
   }
 
 
   .work-number {
-    font-size: 10px;
+    font-size: 11px;
   }
 
 
   .publication-list strong {
     font-size: 18px;
+  }
+
+
+  .publication-list a span:nth-child(2) {
+    font-size: 14px;
   }
 
 
@@ -2147,14 +2208,14 @@ p {
 
 
   .connect-entry-title h3 {
-    font-size: 21px;
+    font-size: 22px;
   }
 
 }
 
 
 /* =========================================================
-   21 — REDUCED MOTION
+   22 — REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2167,11 +2228,21 @@ p {
   *,
   *::before,
   *::after {
-    transition-duration: 0.01ms !important;
+    transition-duration:
+      0.01ms !important;
 
-    animation-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
 
-    animation-iteration-count: 1 !important;
+    animation-iteration-count:
+      1 !important;
+  }
+
+
+  .reveal {
+    opacity: 1;
+
+    transform: none;
   }
 
 }
