@@ -1074,7 +1074,7 @@ p {
 
   border-top:
     1px solid
-    var(--line-light);
+    var(--burgundy);
 }
 
 
@@ -1097,11 +1097,11 @@ p {
   padding:
     24px 0 27px;
 
-  color: var(--white);
+  color: var(--burgundy);
 
   border-bottom:
     1px solid
-    var(--line-light);
+    var(--burgundy);
 
   transition:
     padding-left 220ms var(--ease);
