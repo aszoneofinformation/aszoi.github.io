@@ -648,7 +648,7 @@ p {
    ========================================================= */
 
 .section-about {
-  background: var(--paper);
+  background: var(--white);
 
   color: var(--black);
 }
@@ -1058,7 +1058,7 @@ p {
    ========================================================= */
 
 .section-publication {
-  background: var(--burgundy-dark);
+  background: var(--white);
 
   color: var(--white);
 }
