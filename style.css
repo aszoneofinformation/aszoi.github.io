@@ -1058,7 +1058,7 @@ p {
    ========================================================= */
 
 .section-publication {
-  background: var(--white);
+  background: var(--paper);
 
   color: var(--white);
 }
@@ -1124,7 +1124,7 @@ p {
 .publication-list strong {
   margin: 0;
 
-  color: #FFFFFF;
+  color: #030303;
 
   font-family: var(--serif);
 
@@ -1157,7 +1157,7 @@ p {
    --------------------------------------------------------- */
 
 .publication-list span:last-child {
-  color: var(--brass);
+  color: var(--black);
 
   font-family: var(--sans);
 
