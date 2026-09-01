@@ -1059,8 +1059,7 @@ p {
 
 .section-publication {
   background: var(--paper);
-
-  color: var(--white);
+  color: var(--black);
 }
 
 
@@ -1122,10 +1121,8 @@ p {
    --------------------------------------------------------- */
 
 .publication-list strong {
-  margin: 0;
-
-  color: #030303;
-
+  color: var(--black);
+}
   font-family: var(--serif);
 
   font-size: 20px;
@@ -1140,9 +1137,7 @@ p {
    Publication description
    --------------------------------------------------------- */
 
-.publication-list span:nth-child(2) {
-  color:
-    rgba(255, 255, 255, 0.68);
+color: rgba(255, 255, 255, 0.68);
 
   font-family: var(--sans);
 
@@ -1157,8 +1152,8 @@ p {
    --------------------------------------------------------- */
 
 .publication-list span:last-child {
-  color: var(--black);
-
+  color: var(--burgundy);
+}
   font-family: var(--sans);
 
   font-size: 18px;
